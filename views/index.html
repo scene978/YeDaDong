@@ -1,60 +1,126 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Sing-in Page</title>
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script>
-    $(document).ready(function(){
-
-       $.ajax({
-          url: '/a'
-          ,type:"get"
-          ,success: function(data){
-              console.log('d');
-          }
-          ,error: function(req,state,err){
-            console.log("err");
-          }
-        });
-
-
-        $('#submit').click(function(){
-            var userID = $('#email').val();
-            var userPwd = $('#password').val();
-
-            if ( (userID == "") || (userPwd == "") ) {
-                alert("Insert Your Information!");
-            } else {
-
-                var json = {};
-                json["email"]  =  userID;
-                json["password"] =  userPwd;
-
-                $.ajax({
-                    type:'post',
-                    url:'/login',
-                    data:json,
-                    success:function(result) {
-                      console.log(result.status);
-                        if ( result.status == "FAIL" ) {
-                            alert('nononononono ㅗ');
-                        } else if ( result.status == "SUCCESS" ) {
-                          console.log('gooddddddddddd!')
-                            //$(location).attr('href', '/good');
-                        }
-                    }
-                });
-            }
-        });
-    });
-  </script>
+    <meta charset="utf-8">
+    <title>Colorful Flat by tB3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    
+	<link id="callCss" rel="stylesheet" href="../public/stylesheets/bootstrap/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+	<link id="callCss"rel="stylesheet" href="../public/stylesheets/bootstrap/style.css" type="text/css" media="screen" charset="utf-8" />
+	<link href="../public/stylesheets/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
+	<link type="text/css" rel="Stylesheet" href="../public/stylesheets/bootstrap/jqx.base.css" />
+    <link rel="stylesheet" href="../public/stylesheets/login_form.css" type="text/css" />
+    
+    
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxcore.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxpasswordinput.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxinput.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxdatetimeinput.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxtooltip.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/globalize.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxlistbox.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxexpander.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/jqxvalidator.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bootstrap/demos.js"></script>
+    <script type="text/javascript" src="../public/javascripts/login.js"></script>
+    <script type="text/javascript" src="../public/javascripts/select_login_signin.js"></script>
+	
 </head>
 <body>
-    <p>
-      <input id="email" type="text" placeholder="mail@address.com" required/>
-    </p>
-    <p>
-      <input id="password" type="password" placeholder="password" required />
-    </p>
-      <button type="submit" class="login-button" id='submit'>Login</button>
+<!-- ===========================================Header Start================================================ -->
+	<div id="headerSection">
+	<div class="container">
+	<div class="span3 logo"><a href="#"><img src="../public/images/logo1.png" alt="" /></a></div>
+	</div>
+	</div>
+<!-- ===========================================Header Ends================================================ -->
+
+<!-- ===========================================LOG-IN/SIGN-IN SELECT BUTTON START=============================================== -->
+
+<div id="grouptable">
+		<table cellpadding="15px">
+			<tr>
+				<td id="welcome"><font size="70px" face="Verdana">WELCOME TO</font></td>
+			</tr>
+
+			<tr>
+				<td id="yedadong"><font size="90px" face="Verdana"><strong>YEDADONG</strong></font></td>
+			</tr>
+
+			<tr>
+				<td><font size="4px" face="Verdana">Feel free to communicate with your group!</font></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<a href="#" onclick="login_open('login_form','signin_form'); return false;"><button id="btn1">LOG IN</button></a>
+					<a href="#" onclick="signin_open('signin_form','login_form'); return false;"><button id="btn2">SIGN IN</button></a>
+				</td>
+			</tr>
+	</table>
+	</div>
+
+<!-- ===========================================LOG-IN/SIGN-IN SELECT BUTTON END=============================================== -->
+
+<!-- ===========================================Log In START=============================================== -->
+
+<div id="login_form" style="font-family: Verdana; font-size: 13px; display:block">
+        <div id="title">
+            LOG IN
+        </div>
+        <div style="font-family: Verdana; font-size: 13px;">
+            <form id="form" style="overflow: hidden; " action="./" method="">
+                <table>  
+                    <tr>
+                            <input id="email" type="text" placeholder="mail@address.com" required/>
+                    </tr>
+                    <tr>
+
+                            <input id="password" type="password" placeholder="password" required />
+                    </tr>
+                    <input id="submit" type="submit" value="LOG IN"  />
+                </table>
+            </form>
+        </div>
+    </div>
+    
+<!-- ===========================================Log In END=============================================== -->  
+  
+<!-- ===========================================Sign In START=============================================== -->
+
+<div id="signin_form" style="font-family: Verdana; font-size: 13px; display:none">
+        <div id="title">
+            SIGN IN
+        </div>
+        <div style="font-family: Verdana; font-size: 13px;">
+            <form id="form" style="overflow: hidden; " action="./" method=""> <!-- 나중에 action에 큰동오빠 url넣고 method에는 get/post이런거 쓰기!! -->
+                <table>  
+                    <tr>
+                            <input id="name" type="text" placeholder="name" required/>
+                    </tr>
+                    <tr>
+                            <input id="email" type="text" placeholder="mail@address.com" required/>
+                    </tr>
+                    <tr>
+                            <input id="password" type="password" placeholder="password" required />
+                    </tr>
+                    <tr>
+                            <input id="password_confirm" type="password" placeholder="Confirm password" required />
+                    </tr>
+                    <input type="submit" value="LOG IN"  />
+                </table>
+            </form>
+        </div>
+    </div>
+    
+<!-- ===========================================Sign In END=============================================== -->
+
+>>>>>>> e01f2eefbd0b3efdab97c3bf7f54a4cdceb54047
 </body>
 </html>
