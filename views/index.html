@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+  <title>Sing-in Page</title>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    $(document).ready(function(){
+
+       $.ajax({
+          url: '/a'
+          ,type:"get"
+          ,success: function(data){
+              console.log('d');
+          }
+          ,error: function(req,state,err){
+            console.log("err");
+          }
+        });
+
+
+        $('#submit').click(function(){
+            var userID = $('#email').val();
+            var userPwd = $('#password').val();
+
+            if ( (userID == "") || (userPwd == "") ) {
+                alert("Insert Your Information!");
+            } else {
+
+                var json = {};
+                json["email"]  =  userID;
+                json["password"] =  userPwd;
+
+                $.ajax({
+                    type:'post',
+                    url:'/login',
+                    data:json,
+                    success:function(result) {
+                      console.log(result.status);
+                        if ( result.status == "FAIL" ) {
+                            alert('nononononono ㅗ');
+                        } else if ( result.status == "SUCCESS" ) {
+                          console.log('gooddddddddddd!')
+                            //$(location).attr('href', '/good');
+                        }
+                    }
+                });
+            }
+        });
+    });
+  </script>
+</head>
+<body>
+    <p>
+      <input id="email" type="text" placeholder="mail@address.com" required/>
+    </p>
+    <p>
+      <input id="password" type="password" placeholder="password" required />
+    </p>
+      <button type="submit" class="login-button" id='submit'>Login</button>
+</body>
+</html>

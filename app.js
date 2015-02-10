@@ -1,22 +1,27 @@
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var http = require('http');
+var mysql = require('mysql');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
+var server = http.createServer(app);
+
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.engine('.html', require('ejs').__express);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(logger('dev'));
+// app.use(logger('dev'));
+app.use(session({secret: 'good'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -25,12 +30,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+app.listen(3000,function(){
+    console.log("App Started on PORT 3000");
 });
+
+// catch 404 and forward to error handler
+// app.use(function(req, res, next) {
+//     var err = new Error('Not Found');
+//     err.status = 404;
+//     next(err);
+// });
 
 // error handlers
 
@@ -56,5 +65,65 @@ app.use(function(err, req, res, next) {
     });
 });
 
+var config = {
+        host: 'localhost' , 
+        port: '3306' , 
+        user: 'root' ,
+        database: 'yedadong'
+};
+ 
+var client = mysql.createConnection(config);
 
-module.exports = app;
+client.connect();
+
+client.query('select * from login',function(error, rows, fields){
+    if(error) {
+        console.log("MySQL Failure");
+        console.log(error);
+                  } 
+    else{
+        console.log(rows);
+    }
+});
+
+app.get('/a', function(req,res) {
+         console.log("ok");
+        // res.writeHead(200, { 'Content-Type': 'application/text' });
+        // res.sendFile('index.html');
+        // //res.write("good?");
+        // res.end();  
+        if (req.session.user_id) {
+            console.log(req.session.user_id);
+            res.render('welcome');
+        } else {
+            console.log(req.session.user_id);
+            res.render('index');
+        }
+});
+
+
+
+app.post('/login', function(req,res){
+
+     console.log("Hello");
+    
+    var id = req.body.email;
+    var pwd = req.body.password;
+    console.log(id);
+    console.log(pwd);
+    client.query('select count(*) as a from login WHERE email=? and pass=?',[id,pwd],function(error, rows, fields){
+        if(error) {
+            console.log("MySQL Failure");
+            console.log(error);
+            } 
+        else{
+            console.log(rows[0].a);
+               if ( rows[0].a == 0 ) {
+                    res.send({ "status": "FAIL"});
+                } else {
+                    req.session.email = id;
+                    res.send({ "status": "SUCCESS" });
+                }
+        }
+    });
+});
