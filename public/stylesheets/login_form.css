@@ -1,0 +1,41 @@
+﻿@charset utf-8;
+/* h3{width:400px; margin:0}
+a{color:#999;text-decoration:none}
+a:hover{color:#1dabb8}
+fieldset{border:none;margin:0}
+input{border:none;font-family:inherit;font-size:inherit;-webkit-appearance:none;margin:0}
+input:focus{outline:none}
+input[type=submit]{cursor:pointer}
+.clearfix{zoom:1}
+.clearfix:before,.clearfix:after{content:"";display:table}
+.clearfix:after{clear:both} */
+
+#login_form{width:400px;margin:50px auto;float:right;margin-right:200px}
+#login_form #title{background-color:#282830;border-radius:5px 5px 0 0;color:#fff;font-size:20px;text-align:center;text-transform:uppercase;padding:20px}
+#login_form #form{border-radius:0 0 5px 5px;position:relative;background:#eaeaea;color:#999;font:100%/1.5em sans-serif;margin:0;padding:20px}
+#login_form input[type=text],#login_form input[type=password]{border:1px solid #dcdcdc;font-size:14px;width:87%;margin:10px;padding:12px;}
+#login_form input[type=text]{border-radius:3px 3px 0 0;font-size:14px;width:87%;margin:10px}
+#login_form input[type=password]{border-top:none;border-radius:0 0 3px 3px;font-size:14px;width:87%;margin:10px}
+#login_form input[type=submit]{background:#1dabb8;border-radius:3px;color:#fff;float:right;font-weight:700;margin-top:20px;width:150px;padding:12px 20px}
+#login_form input[type=submit]:hover{background:#198d98}
+#login_form fieldset p label{float:left}
+.info{background:#e5e5e5;border-radius:50%;display:inline-block;height:20px;line-height:20px;text-align:center;width:20px;margin:0 10px 0 0}
+
+
+#signin_form{width:400px;margin:10px auto;float:right;margin-right:200px}
+#signin_form #title{background-color:#282830;border-radius:5px 5px 0 0;color:#fff;font-size:20px;text-align:center;text-transform:uppercase;padding:20px}
+#signin_form #form{border-radius:0 0 5px 5px;position:relative;background:#eaeaea;color:#999;font:100%/1.5em sans-serif;margin:0;padding:20px}
+#signin_form input[type=text],#signin_form input[type=password]{border:1px solid #dcdcdc;font-size:14px;width:87%;margin:0;padding:0 10px;}
+#signin_form input[type=text]{border-radius:3px 3px 0 0;font-size:14px;width:87%;margin:10px}
+#signin_form input[type=password]{border-top:none;border-radius:0 0 3px 3px;font-size:14px;width:87%;margin:10px}
+#signin_form input[type=submit]{background:#1dabb8;border-radius:3px;color:#fff;float:right;font-weight:700;margin-top:20px;width:150px;padding:12px 20px}
+#signin_form input[type=submit]:hover{background:#198d98}
+#signin_form fieldset p label{float:left}
+.info{background:#e5e5e5;border-radius:50%;display:inline-block;height:20px;line-height:20px;text-align:center;width:20px;margin:0 10px 0 0}
+
+
+#grouptable{width:450px;margin:100px auto;float:left;margin-left:200px}
+#grouptable #welcome{text-align:center}
+#grouptable #yedadong{text-align:center}
+#grouptable #btn1{background:#282830;color:#fff;font-size:16px;font-weight:700;float:left;margin-top:20px;margin-left:35px;width:150px;padding:17px 20px}
+#grouptable #btn2{background:#282830;color:#fff;font-size:16px;font-weight:700;float:right;margin-top:20px;margin-right:35px;width:150px;padding:17px 20px}
