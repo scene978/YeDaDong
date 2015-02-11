@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <!-- login form style -->
-	<link id="callCss" rel="stylesheet" href="../public/stylesheets/bootstrap/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+	<link id="callCss" rel="stylesheet" href="/stylesheets/bootstrap/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
 	<!-- background style -->
-	<link id="callCss"rel="stylesheet" href="../public/stylesheets/bootstrap/style.css" type="text/css" media="screen" charset="utf-8" /> 
+	<link id="callCss"rel="stylesheet" href="/stylesheets/bootstrap/style.css" type="text/css" media="screen" charset="utf-8" /> 
 	<!-- header section logo location setting -->
-	<link href="../public/stylesheets/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../public/stylesheets/login_form.css" type="text/css" />
-    <script type="text/javascript" src="../public/javascripts/index.js"></script>
+	<link href="/stylesheets/bootstrap/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/login_form.css" type="text/css" />
+    <script type="text/javascript" src="/javascripts/index.js"></script>
 	
 </head>
 <body>
 <!-- ===========================================Header Start================================================ -->
 	<div id="headerSection">
-	<div class="container">
-	<div class="span3 logo"><a href="#"><img src="../public/images/logo1.png" alt="" /></a></div>
-	</div>
+    	<div class="container">
+    	   <div class="span3 logo"><a href="#"><img src="/images/logo1.png" alt="" /></a></div>
+    	</div>
 	</div>
 <!-- ===========================================Header Ends================================================ -->
 
@@ -62,13 +62,13 @@
             <form id="form" style="overflow: hidden; " action="./" method="">
                 <table>  
                     <tr>
-                            <input id="email" type="text" placeholder="mail@address.com" required/>
+                            <input id="login_email" type="text" placeholder="mail@address.com" required/>
                     </tr>
                     <tr>
 
-                            <input id="password" type="password" placeholder="password" required />
+                            <input id="login_password" type="password" placeholder="password" required />
                     </tr>
-                    <input id="submit" type="submit" value="LOG IN"  />
+                    <input id="submit" type="submit" value="LOG IN" id="submit" />
                 </table>
             </form>
         </div>
@@ -105,6 +105,5 @@
     
 <!-- ===========================================Sign In END=============================================== -->
 
->>>>>>> e01f2eefbd0b3efdab97c3bf7f54a4cdceb54047
 </body>
 </html>

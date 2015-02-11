@@ -1,13 +1,11 @@
 var express = require('express');
+// var routes = require('./routes');
 var session = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
 var mysql = require('mysql');
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -27,8 +25,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+
+// var routes = require('./routes/index');
+// var users = require('./routes/users');
+// app.use('/', routes);
+// app.use('/users', users);
 
 app.listen(3000,function(){
     console.log("App Started on PORT 3000");
@@ -86,22 +87,15 @@ client.query('select * from login',function(error, rows, fields){
     }
 });
 
-app.get('/a', function(req,res) {
-         console.log("ok");
-        // res.writeHead(200, { 'Content-Type': 'application/text' });
-        // res.sendFile('index.html');
-        // //res.write("good?");
-        // res.end();  
-        if (req.session.user_id) {
-            console.log(req.session.user_id);
-            res.render('welcome');
-        } else {
-            console.log(req.session.user_id);
-            res.render('index');
-        }
+app.get('/', function(req,res) {
+    console.log("ok");
+    if (req.session.user_id) {
+        console.log(req.session.user_id);
+        res.render('welcome');
+    } else {
+        res.sendfile('views/index.html');
+    }
 });
-
-
 
 app.post('/login', function(req,res){
 
@@ -117,12 +111,12 @@ app.post('/login', function(req,res){
             console.log(error);
             } 
         else{
-            console.log(rows[0].a);
                if ( rows[0].a == 0 ) {
                     res.send({ "status": "FAIL"});
                 } else {
                     req.session.email = id;
                     res.send({ "status": "SUCCESS" });
+                    console.log("send");
                 }
         }
     });
