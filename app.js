@@ -64,7 +64,7 @@ app.post('/login', function(req,res){
         } else {
             req.session.email = id;
             //res.send({ "status": "SUCCESS"});
-            res.render('test');
+            res.render('mypage');
         }
     });
 });
@@ -87,7 +87,7 @@ app.post('/signin', function(req,res){
     });
 });
 
-app.get('/test', function(req,res) {
+app.get('/mypage', function(req,res) {
     console.log("test");
-    res.render('test');
+    res.render('mypage');
 });
