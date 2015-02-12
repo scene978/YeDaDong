@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Colorful Flat by tB3</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- -------------------------------------------------------------javascript begins----------------------------------------------------------- -->
+		<script type="text/javascript" src="/javascripts/bootstrap/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="/javascripts/bootstrap/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/javascripts/bootstrap/jquery.scrollTo-1.4.3.1-min.js"></script>
+		<script type="text/javascript" src="/javascripts/bootstrap/jquery.easing-1.3.min.js"></script>
+		<script type="text/javascript" src="/javascripts/bootstrap/default.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.js"></script>
+
+		<script type="text/javascript" src="/javascripts/mypage.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap.min.css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap-responsive.min.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/style.css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/jqx.base.css" />
+
+		<link rel="stylesheet" type="text/css" href="/stylesheets/mypage.css" />
+
+	</head>
+	<body>
+		<!-- --------------------------------------------------create group layer------------------------------------------------------------ -->
+		<div class="layer">
+			<div class="background"></div>
+			<div id="create_group_popup" class="pop-layer">
+				<div class="pop-container">
+					<div class="pop-conts">
+						<TABLE>
+							<tr>
+								<td>Group Name</td>
+								<td>
+								<input type="text" id="groupname_data" size="20" placeholder="그룹명을 입력하세요.">
+								</td>
+							</tr>
+							<tr>
+								<td>Group Info</td>
+								<td>
+								<input type="text" id="groupinfo_data" size="20" placeholder="그룹에 대한 설명을 입력하세요.">
+								</td>
+							</tr>
+
+						</TABLE>
+						<div class="okclosebtn">
+							<a href="#" id="create_group_ok_btn" class="okbtn">Complete</a><a
+							href="#" class="cbtn">Close</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="congrat_create" class="pop-layer">
+				<div class="pop-container">
+					<div class="pop-conts">
+						<p>
+							Congratulations!
+							<br>
+							You've created a new group!!
+						</p>
+						<div class="okclosebtn">
+							<a href="#" class="cbtn">Close</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- --------------------------------------------------------search group layer------------------------------------------------------------ -->
+		<div class="layer2">
+			<div class="background"></div>
+			<div id="search_group_popup" class="pop-layer">
+				<div class="pop-container">
+					<div class="pop-conts">
+						<form action="/search" method="get" class="sfm" align="center">
+							<input type="text" name="q" value="" id="sf" />
+							<input
+							type="image" value="Search" src="themes/img/zoom19.png" id="sb" />
+						</form>
+						<table>
+							<tr>
+								<td class="group_name">Comedu</td>
+								<td class="group_info">SKKU computer education dept</td>
+							</tr>
+							<tr>
+
+							</tr>
+						</table>
+						<div class="okclosebtn">
+							<a href="#" class="cbtn">Close</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- --------------------------------------------------------group delete layer------------------------------------------------------------ -->
+		<div class="layer3">
+			<div class="background"></div>
+			<div id="group_delete_popup" class="pop-layer">
+				<div class="pop-container">
+					<div class="pop-conts">
+						<p>
+							정말 그룹을 탈퇴하시겠습니까?
+						</p>
+						<div class="okclosebtn">
+							<a href="#" class="cbtn" id="delete_group_ok">YES</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- --------------------------------------------------------header section begins------------------------------------------------ -->
+		<div id="headerSection">
+			<div id="toptoolbar">
+				<div>
+					<button id="logout" type="button">
+						<ins>LOGOUT</ins>
+					</button>
+
+				</div>
+				<div>
+					<button type="button">
+						YeDaDongNim
+					</button>
+				</div>
+				<div>
+					<form name="groupselect" method="POST">
+						<div align="center">
+							<select name="group-dropdown">
+								<option value="group1">Group1</option>
+								<option value="group2">Group2</option>
+								<option value="group3">Group3</option>
+							</select>
+						</div>
+					</form>
+				</div>
+
+			</div>
+
+			<div class="container">
+				<div class="span3 logo">
+					<a href="#"><img src="themes/img/logo1.png" alt="" /></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- ------------------------------------------------------------group table section begins-------------------------------------------- -->
+		<div id="grouptable">
+			<table cellpadding="15px">
+				<tr>
+					<td><font size="75px" face="Verdana"><strong>GROUP</strong></font></td>
+				</tr>
+
+				<tr>
+					<td><font size="4px" face="Verdana">Join a group and make your own group</font></td>
+				</tr>
+				<tr>
+					<td><a href="#">
+					<button type="button" id="search_group_btn">
+						Search
+					</button> </a></td>
+				</tr>
+				<tr>
+					<td><a href="#">
+					<button type="button" id="create_group_btn">
+						Create
+					</button></a></td>
+				</tr>
+
+			</table>
+		</div>
+
+		<!-- --------------------------------------------------------------group_form begins-------------------------------------------- -->
+		<div id="group_form" style="font-family: Verdana; font-size: 14px; display: block">
+			<div id="title">
+				MY LIST
+			</div>
+			<div>
+				<form id="form" style="overflow: hidden;" action="./" method="">
+					<table id="my_group_list">
+						<tr>
+							<td class="group_name">Comedu</td>
+							<td class="group_info">SKKU computer education dept</td>
+							<td class="del_group">
+							<div>
+								<a href="#"><img src="themes/img/delete84.png" alt="" /></a>
+							</div></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div id="title">
+				WAITING LIST
+			</div>
+			<div>
+				<form id="form" style="overflow: hidden;" action="./" method="">
+					<table>
+						<tr>
+							<td class="group_name">Friendasfasfdas</td>
+							<td class="group_info">SKKU basketball club</td>
+							<td class="del_group">
+							<div>
+								<a href="#"><img src="themes/img/delete84.png" alt="" /></a>
+							</div></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

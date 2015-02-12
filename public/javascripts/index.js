@@ -23,7 +23,7 @@
                 var json = {};
                 json["email"]  =  userID;
                 json["password"] =  userPwd;
-
+				console.log("submit");
                 $.ajax({
                     type:'post',
                     url:'/login',
@@ -31,11 +31,12 @@
                     success:function(result) {
                       console.log(result.status);
                         if ( result.status == "FAIL" ) {
+                        	console.log("123");
                             alert('nononononono ㅗ');
                         } else if ( result.status == "SUCCESS" ) {
                           console.log('gooddddddddddd!');
-                          //window.location.href="/views/login success.html";
-                          //$(location).attr('href', 'views/login success.html'); //move page
+                          // window.location.href="/views/login success.html";
+                          $(location).attr('href', '/temp.html'); //move page
                         }
                     }
                 });
@@ -43,22 +44,22 @@
         });
     });
 
-
-function login_open(idFirDiv,idSecDiv){
-	var objDiv = document.getElementById(idFirDiv);
-	var objDiv2 = document.getElementById(idSecDiv);
-
-    if(objDiv.style.display=="block")
-    	{ objDiv2.style.display = "none"; }
-    else{ objDiv.style.display = "block"; objDiv2.style.display = "none"; }
-}
-
-function signin_open(idFirDiv,idSecDiv){
-	var objDiv = document.getElementById(idFirDiv);
-	var objDiv2 = document.getElementById(idSecDiv);
-
-    if(objDiv.style.display=="none")
-    	{ objDiv.style.display = "block"; objDiv2.style.display = "none"; }
-    else{ objDiv2.style.display = "none"; }
-}
+// 
+// function login_open(idFirDiv,idSecDiv){
+	// var objDiv = document.getElementById(idFirDiv);
+	// var objDiv2 = document.getElementById(idSecDiv);
+// 
+    // if(objDiv.style.display=="block")
+    	// { objDiv2.style.display = "none"; }
+    // else{ objDiv.style.display = "block"; objDiv2.style.display = "none"; }
+// }
+// 
+// function signin_open(idFirDiv,idSecDiv){
+	// var objDiv = document.getElementById(idFirDiv);
+	// var objDiv2 = document.getElementById(idSecDiv);
+// 
+    // if(objDiv.style.display=="none")
+    	// { objDiv.style.display = "block"; objDiv2.style.display = "none"; }
+    // else{ objDiv2.style.display = "none"; }
+// }
 

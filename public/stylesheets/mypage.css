@@ -1,0 +1,216 @@
+﻿@charset
+utf-8;
+/* h3{width:400px; margin:0}
+a{color:#999;text-decoration:none}
+a:hover{color:#1dabb8}
+fieldset{border:none;margin:0}
+input{border:none;font-family:inherit;font-size:inherit;-webkit-appearance:none;margin:0}
+input:focus{outline:none}
+input[type=submit]{cursor:pointer}
+.clearfix{zoom:1}
+.clearfix:before,.clearfix:after{content:"";display:table}
+.clearfix:after{clear:both} */
+#group_form{width:400px;margin:50px
+auto;float:right;margin-right:200px
+}
+/* ---------------------------------------------------toptoolbar----------------------------------------------------- */
+#toptoolbar {
+	text-align: right;
+	float: right;
+	height: 30px
+}
+
+groupselect {
+	float: right;
+}
+
+#toptoolbar button {
+	background-color: #a5d2da;
+	border: none;
+	cursor: pointer;
+	float: right;
+}
+
+#toptoolbar>div {
+	float: right;
+	margin-right: 25px;
+}
+
+/* --------------------------------------------------------------group form------------------------------------------------------------ */
+
+#group_form {
+	width: 440px;
+}
+#group_form #title {
+	background-color: #282830;
+	border-radius: 5px 5px 0 0;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 10px
+}
+
+#group_form #form {
+	height: 120px;
+	position: relative;
+	background: #eaeaea;
+	color: #999;
+	font: 100%/1.5em verdana;
+	margin: 0;
+	padding: 10px
+}
+
+.group_name{
+	padding: 2px 10px;
+	width: 75px;
+	table-layout:fixed;
+	word-break:break-all;
+	color: black;
+}
+.group_info{
+	padding: 2px 10px;
+	width: 260px;
+	padding-right: 5px
+}
+
+#group_form img{
+	width: 30px;
+	margin-right: 0px
+}
+
+.del_group{
+	padding: 2px 10px;
+	float: right;
+	height: 40px;
+	width: 40px;
+	table-layout: fixed
+}
+/* -----------------------------------------------------------------------group table------------------------------------------------ */
+#grouptable {
+	width: 450px;
+	margin: 80px auto;
+	float: left;
+	margin-left: 150px
+}
+#grouptable button {
+	height: 60px;
+	width: 120px;
+	border-radius: 8px;
+	border: solid;
+	background-color: #3a494c;
+	text-align: center;
+	color: #a8d5dd;
+	font-family: Verdana;
+	opacity: 0.65;
+	font-size: 20px;
+}
+
+/* --------------------------------------------------popup layer style----------------------------------------------- */
+.layer ,.layer2, .layer3 {
+	display: none;
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	font-family: Verdana;
+	font-size : 14px
+}
+
+.layer .background , .layer2 .background, .layer3 .background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .5;
+	filter: alpha(opacity = 50);
+}
+
+.layer .pop-layer , .layer2 .pop-layer, .layer3 .pop-layer {
+	display: block;
+}
+
+.pop-layer, #congrat_create {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 410px;
+	height: auto;
+	background-color: #fff;
+	border: 5px solid #454545;
+	z-index: 10;
+	border-radius: 20px;
+}
+
+.pop-layer .pop-container {
+	padding: 20px 25px;
+}
+
+.pop-layer p.ctxt {
+	color: #666;
+	line-height: 25px;
+}
+
+.pop-layer .okclosebtn {
+	width: 100%;
+	margin: 10px 0 20px;
+	padding-top: 10px;
+	border-top: 1px solid #DDD;
+	text-align: right;
+}
+
+a.cbtn, a.okbtn {
+	margin-right: 30px;
+	display: inline-block;
+	height: 25px;
+	padding: 0 14px 0;
+	border: 1px solid #454545;
+	background-color: #454545;
+	opacity: 0.6;
+	font-size: 13px;
+	color: #fff;
+	line-height: 25px;
+	font-family: Verdana
+}
+
+a.cbtn:hover, a.okbtn:hover {
+	border: 1px solid #454545;
+	background-color: #454545;
+	color: black;
+}
+
+.pop-conts div {
+	float: right;
+	display: inline-block
+}
+/* -------------------------------------------------------search box------------------------------------------------------------- */
+.sfm input {
+	background-color: #f5f5f5;
+	font-size: 14px;
+	border: 0px;
+	text-transform: uppercase;
+	margin-top: 0px;
+	color: #999;
+	letter-spacing: 1px;
+	padding: 4px 8px;
+	font-family: calibri, helvetica, arial;
+}
+
+#sb {
+	height: 20px;
+	vertical-align: top;
+}
+
+#sf {
+	background:
+		url('http://static.tumblr.com/f1skqpy/Oxbn13qun/search_icon.png')
+		#f5f5f5 left center no-repeat;
+	background-size: 25px 25px;
+	color: black;
+}

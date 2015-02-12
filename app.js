@@ -11,7 +11,7 @@ var app = express();
 
 var server = http.createServer(app);
 
-// view engine setup
+// view engine setup	
 app.engine('.html', require('ejs').__express);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'html');
@@ -77,7 +77,7 @@ var client = mysql.createConnection(config);
 
 client.connect();
 
-client.query('select * from login',function(error, rows, fields){
+client.query('select * from member',function(error, rows, fields){
     if(error) {
         console.log("MySQL Failure");
         console.log(error);
@@ -105,7 +105,7 @@ app.post('/login', function(req,res){
     var pwd = req.body.password;
     console.log(id);
     console.log(pwd);
-    client.query('select count(*) as a from login WHERE email=? and pass=?',[id,pwd],function(error, rows, fields){
+    client.query('select count(*) as a from member WHERE id=? and pwd=?',[id,pwd],function(error, rows, fields){
         if(error) {
             console.log("MySQL Failure");
             console.log(error);
