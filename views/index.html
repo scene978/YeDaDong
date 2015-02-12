@@ -35,20 +35,20 @@
 <div id="grouptable">
 		<table cellpadding="15px">
 			<tr>
-				<td id="welcome"><font size="70px" face="Verdana">WELCOME TO</font></td>
+				<td id="welcomeIntro">WELCOME TO</font></td>
 			</tr>
 
 			<tr>
-				<td id="yedadong"><font size="90px" face="Verdana"><strong>YEDADONG</strong></font></td>
+				<td id="yedadongIntro"><strong>YEDADONG</strong></font></td>
 			</tr>
 
 			<tr>
-				<td><font size="4px" face="Verdana">Feel free to communicate with your group!</font></td>
+				<td id="subIntro">Feel free to communicate with your group!</font></td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<a href="#" onclick="login_open('login_form','signin_form'); return false;"><button id="btn1">LOG IN</button></a>
-					<a href="#" onclick="signin_open('signin_form','login_form'); return false;"><button id="btn2">SIGN IN</button></a>
+					<a href="#" onclick="login_open('login_form','signin_form'); return false;"><button id="btnLogin">LOG IN</button></a>
+					<a href="#" onclick="signin_open('signin_form','login_form'); return false;"><button id="btnSignin">SIGN IN</button></a>
 				</td>
 			</tr>
 	</table>
@@ -58,21 +58,21 @@
 
 <!-- ===========================================Log In START=============================================== -->
 
-<div id="login_form" style="font-family: Verdana; font-size: 13px; display:block">
-        <div id="title">
+<div id="login_form">
+        <div id="titleLogin">
             LOG IN
         </div>
-        <div style="font-family: Verdana; font-size: 13px;">
-            <form id="form" style="overflow: hidden; " action="./" method="">
+        <div id="contentLogin">
+            <form id="formLogin" style="overflow: hidden; " action="./" method="">
                 <table>  
                     <tr>
-                            <input id="login_email" type="text" placeholder="mail@address.com" required/>
+                            <input id="IDLogin" type="text" placeholder="mail@address.com" required/>
                     </tr>
                     <tr>
 
-                            <input id="login_password" type="password" placeholder="password" required />
+                            <input id="pwdLogin" type="password" placeholder="password" required />
                     </tr>
-                    <input type="button" value="LOG IN" id="login_submit" />
+                    <input id="submitLogin" type="button" value="LOG IN" />
                 </table>
             </form>
         </div>
@@ -82,26 +82,26 @@
   
 <!-- ===========================================Sign In START=============================================== -->
 
-<div id="signin_form" style="font-family: Verdana; font-size: 13px; display:none">
-        <div id="title">
+<div id="signin_form">
+        <div id="titleSignin">
             SIGN IN
         </div>
-        <div style="font-family: Verdana; font-size: 13px;">
-            <form id="form" style="overflow: hidden; " action="./" method=""> <!-- 나중에 action에 큰동오빠 url넣고 method에는 get/post이런거 쓰기!! -->
+        <div id="contentSignin">
+            <form id="formSignin" style="overflow: hidden; " action="./" method=""> <!-- 나중에 action에 큰동오빠 url넣고 method에는 get/post이런거 쓰기!! -->
                 <table>  
                     <tr>
-                            <input id="signin_name" type="text" placeholder="name" required/>
+                            <input id="nameSignin" type="text" placeholder="name" required/>
                     </tr>
                     <tr>
-                            <input id="signin_email" type="text" placeholder="mail@address.com" required/>
+                            <input id="IDSignin" type="text" placeholder="mail@address.com" required/>
                     </tr>
                     <tr>
-                            <input id="signin_password" type="password" placeholder="password" required />
+                            <input id="pwdSignin" type="password" placeholder="password" required />
                     </tr>
                     <tr>
-                            <input id="password_confirm" type="password" placeholder="Confirm password" required />
+                            <input id="pwd_confirmSignin" type="password" placeholder="Confirm password" required />
                     </tr>
-                    <input type="button" value="SIGN IN" id="signin_submit" />
+                    <input id="submitSignin" type="button" value="SIGN IN" />
                 </table>
             </form>
         </div>

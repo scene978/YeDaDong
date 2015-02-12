@@ -33,10 +33,10 @@ $(document).ready(function() {
 		}
 	});
 
-	$('#login_submit').click(function() {
+	$('#submitLogin').click(function() {
 
-		var userID = $('#login_email').val();
-		var userPwd = $('#login_password').val();
+		var userID = $('#IDLogin').val();
+		var userPwd = $('#pwdLogin').val();
 
 		if ((userID == "") || (userPwd == "")) {
 			alert("Insert Your Information!");

@@ -13,5 +13,5 @@ function signin_open(idFirDiv,idSecDiv){
 
     if(objDiv.style.display=="none")
     	{ objDiv.style.display = "block"; objDiv2.style.display = "none"; }
-    else{ objDiv2.style.display = "none"; }
+    else{ objDiv.style.display = "none"; objDiv2.style.display = "block"; }
 }
