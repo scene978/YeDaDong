@@ -1,5 +1,5 @@
 var express = require('express');
-// var routes = require('./routes');
+var routes = require('./routes/index');
 var session = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -24,8 +24,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-// var routes = require('./routes/index');
 // var users = require('./routes/users');
 // app.use('/', routes);
 // app.use('/users', users);
@@ -35,58 +33,21 @@ app.listen(3000,function(){
 });
 
 var config = {
-        host: 'localhost' , 
-        port: '3306' , 
-        user: 'root' ,
-        database: 'yedadong'
+    host: 'localhost' , 
+    port: '3306' , 
+    user: 'root' ,
+    database: 'yedadong'
 };
- 
+
 var client = mysql.createConnection(config);
 client.connect();
 
-app.get('/', function(req,res) {
-    if (req.session.user_id) {
-        console.log(req.session.user_id);
-        //res.render('login'); 다솜이꺼 만들고 건들자
-    } else {
-        res.render('index');
-    }
-});
+//index
+app.get('/', routes.index);
+app.post('/login', routes.login);
+app.post('/signin', routes.signin);
 
-app.post('/login', function(req,res){
-    
-    var id = req.body.email;
-    var pwd = req.body.password;
-
-    client.query('select count(*) as a from member WHERE id=? and pwd=?',[id,pwd],function(error, rows, fields){
-        if ( rows[0].a == 0 ) {
-            res.send({ "status": "FAIL"});
-        } else {
-            req.session.email = id;
-            //res.send({ "status": "SUCCESS"});
-            res.render('mypage');
-        }
-    });
-});
-
-app.post('/signin', function(req,res){
-    
-    var id = req.body.email;
-    var pwd = req.body.password;
-    var name = req.body.userName;
-
-    client.query('select count(*) as a from member WHERE id=?',[id],function(error, rows, fields){
-        if ( rows[0].a != 0 ) {
-             res.send({ "status": "FAIL"});
-        }
-        else {
-            client.query('INSERT INTO member(id, pwd, member_name) VALUES (?,?,?)',[id, pwd, name],function(error, rows, fields){
-                    res.send({ "status": "SUCCESS" });
-            });
-        }
-    });
-});
-
+//mypage
 app.get('/mypage', function(req,res) {
     console.log("test");
     res.render('mypage');
