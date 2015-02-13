@@ -119,23 +119,21 @@
 		<div id="headerSection">
 			<div id="toptoolbar">
 				<div>
-					<button id="logout" type="button">
-						<ins>LOGOUT</ins>
+					<button id="btnLogout" type="button">
+						LOGOUT
 					</button>
 
 				</div>
 				<div>
-					<button type="button">
-						YeDaDongNim
+					<button id="btnHelloMessage" type="button">
+						
 					</button>
+					
 				</div>
 				<div>
-					<form name="groupselect" method="POST">
+					<form name="groupselect">
 						<div align="center">
-							<select name="group-dropdown">
-								<option value="group1">Group1</option>
-								<option value="group2">Group2</option>
-								<option value="group3">Group3</option>
+							<select id="groupList" name="group-dropdown">
 							</select>
 						</div>
 					</form>
@@ -184,14 +182,7 @@
 			<div>
 				<form id="form" style="overflow: hidden;" action="./" method="">
 					<table id="my_group_list">
-						<tr>
-							<td class="group_name">Comedu</td>
-							<td class="group_info">SKKU computer education dept</td>
-							<td class="del_group">
-							<div>
-								<a href="#"><img src="/images/delete84.png" alt="" /></a>
-							</div></td>
-						</tr>
+						
 					</table>
 				</form>
 			</div>
@@ -200,7 +191,7 @@
 			</div>
 			<div>
 				<form id="form" style="overflow: hidden;" action="./" method="">
-					<table>
+					<table id="waitingList">
 						<tr>
 							<td class="group_name">Friendasfasfdas</td>
 							<td class="group_info">SKKU basketball club</td>
