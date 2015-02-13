@@ -1,113 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Colorful Flat by tB3</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-    <!-- ----------------------------------------------------java script begins------------------------------------------------------ -->
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    
-    <script type="text/javascript" src="/javascripts/index.js"></script>
-    <script type="text/javascript" src="/javascripts/index2.js"></script>
-    
-	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="/stylesheets/bootstrap/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="/stylesheets/bootstrap/style.css" /> 
-	<link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap-responsive.min.css">
-	
-    <link rel="stylesheet" type="text/css" href="/stylesheets/login_form.css" />
-	
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>Colorful Flat by tB3</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
 
-<body>
-<!-- ===========================================Header Start================================================ -->
-	<div id="headerSection">
-    	<div class="container">
-    	   <div class="span3 logo"><a href="#"><img src="/images/logo1.png" alt="" /></a></div>
-    	</div>
-	</div>
-<!-- ===========================================Header Ends================================================ -->
+		<!-- ----------------------------------------------------java script begins------------------------------------------------------ -->
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
-<!-- ===========================================LOG-IN/SIGN-IN SELECT BUTTON START=============================================== -->
+		<script type="text/javascript" src="/javascripts/index.js"></script>
+		<script type="text/javascript" src="/javascripts/index2.js"></script>
 
-<div id="grouptable">
-		<table cellpadding="15px">
-			<tr>
-				<td id="welcome"><font size="70px" face="Verdana">WELCOME TO</font></td>
-			</tr>
+		<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="/stylesheets/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="/stylesheets/bootstrap/style.css" />
+		<link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap-responsive.min.css">
 
-			<tr>
-				<td id="yedadong"><font size="90px" face="Verdana"><strong>YEDADONG</strong></font></td>
-			</tr>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/login_form.css" />
 
-			<tr>
-				<td><font size="4px" face="Verdana">Feel free to communicate with your group!</font></td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<a href="#" onclick="login_open('login_form','signin_form'); return false;"><button id="btn1">LOG IN</button></a>
-					<a href="#" onclick="signin_open('signin_form','login_form'); return false;"><button id="btn2">SIGN IN</button></a>
-				</td>
-			</tr>
-	</table>
-	</div>
+	</head>
 
-<!-- ===========================================LOG-IN/SIGN-IN SELECT BUTTON END=============================================== -->
+	<body>
+		<!-- ===========================================Header Start================================================ -->
+		<div id="headerSection">
+			<div class="container">
+				<div class="span3 logo">
+					<a href="#"><img src="/images/logo1.png" alt="" /></a>
+				</div>
+			</div>
+		</div>
+		<!-- ===========================================Header Ends================================================ -->
 
-<!-- ===========================================Log In START=============================================== -->
+		<!-- ===========================================LOG-IN/SIGN-IN SELECT BUTTON START=============================================== -->
 
-<div id="login_form" style="font-family: Verdana; font-size: 13px; display:block">
-        <div id="title">
-            LOG IN
-        </div>
-        <div style="font-family: Verdana; font-size: 13px;">
-            <form id="form" style="overflow: hidden; " action="./" method="">
-                <table>  
-                    <tr>
-                            <input id="login_email" type="text" placeholder="mail@address.com" required/>
-                    </tr>
-                    <tr>
+		<div id="grouptable">
+			<table cellpadding="15px">
+				<tr>
+					<td id="welcome"><font size="70px" face="Verdana">WELCOME TO</font></td>
+				</tr>
 
-                            <input id="login_password" type="password" placeholder="password" required />
-                    </tr>
-                    <input type="button" value="LOG IN" id="login_submit" />
-                </table>
-            </form>
-        </div>
-    </div>
-    
-<!-- ===========================================Log In END=============================================== -->  
-  
-<!-- ===========================================Sign In START=============================================== -->
+				<tr>
+					<td id="yedadong"><font size="90px" face="Verdana"><strong>YEDADONG</strong></font></td>
+				</tr>
 
-<div id="signin_form" style="font-family: Verdana; font-size: 13px; display:none">
-        <div id="title">
-            SIGN IN
-        </div>
-        <div style="font-family: Verdana; font-size: 13px;">
-            <form id="form" style="overflow: hidden; " action="./" method=""> <!-- 나중에 action에 큰동오빠 url넣고 method에는 get/post이런거 쓰기!! -->
-                <table>  
-                    <tr>
-                            <input id="signin_name" type="text" placeholder="name" required/>
-                    </tr>
-                    <tr>
-                            <input id="signin_email" type="text" placeholder="mail@address.com" required/>
-                    </tr>
-                    <tr>
-                            <input id="signin_password" type="password" placeholder="password" required />
-                    </tr>
-                    <tr>
-                            <input id="password_confirm" type="password" placeholder="Confirm password" required />
-                    </tr>
-                    <input type="button" value="SIGN IN" id="signin_submit" />
-                </table>
-            </form>
-        </div>
-    </div>
-    
-<!-- ===========================================Sign In END=============================================== -->
+				<tr>
+					<td><font size="4px" face="Verdana">Feel free to communicate with your group!</font></td>
+				</tr>
+				<tr>
+					<td colspan="2"><a href="#" onclick="login_open('login_form','signin_form'); return false;">
+					<button id="btn1">
+						LOG IN
+					</button></a><a href="#" onclick="signin_open('signin_form','login_form'); return false;">
+					<button id="btn2">
+						SIGN IN
+					</button></a></td>
+				</tr>
+			</table>
+		</div>
 
-</body>
+		<!-- ===========================================LOG-IN/SIGN-IN SELECT BUTTON END=============================================== -->
+
+		<!-- ===========================================Log In START=============================================== -->
+
+		<div id="login_form" style="font-family: Verdana; font-size: 13px; display:block">
+			<div id="title">
+				LOG IN
+			</div>
+			<div style="font-family: Verdana; font-size: 13px;">
+				<form id="form" style="overflow: hidden; " action="./" method="">
+					<table>
+						<tr>
+							<input id="login_email" type="text" placeholder="mail@address.com" required/>
+						</tr>
+						<tr>
+
+							<input id="login_password" type="password" placeholder="password" required />
+						</tr>
+						<input type="button" value="LOG IN" id="login_submit" />
+					</table>
+				</form>
+			</div>
+		</div>
+
+		<!-- ===========================================Log In END=============================================== -->
+
+		<!-- ===========================================Sign In START=============================================== -->
+
+		<div id="signin_form" style="font-family: Verdana; font-size: 13px; display:none">
+			<div id="title">
+				SIGN IN
+			</div>
+			<div style="font-family: Verdana; font-size: 13px;">
+				<form id="form" style="overflow: hidden; " action="./" method="">
+					<!-- 나중에 action에 큰동오빠 url넣고 method에는 get/post이런거 쓰기!! -->
+					<table>
+						<tr>
+							<input id="signin_name" type="text" placeholder="name" required/>
+						</tr>
+						<tr>
+							<input id="signin_email" type="text" placeholder="mail@address.com" required/>
+						</tr>
+						<tr>
+							<input id="signin_password" type="password" placeholder="password" required />
+						</tr>
+						<tr>
+							<input id="password_confirm" type="password" placeholder="Confirm password" required />
+						</tr>
+						<input type="button" value="SIGN IN" id="signin_submit" />
+					</table>
+				</form>
+			</div>
+		</div>
+
+		<!-- ===========================================Sign In END=============================================== -->
+
+	</body>
 </html>
