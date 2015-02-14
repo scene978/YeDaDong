@@ -57,3 +57,4 @@ app.get('/mypage/helloMessage', mypage.helloMessage);
 app.post('/mypage/scrollGroupList', mypage.scrollGroupList);
 app.post('/mypage/getGroupList', mypage.getGroupList);
 app.post('/mypage/getWaitingList', mypage.getWaitingList);
+app.post('/mypage/createGroup', mypage.createGroup);
