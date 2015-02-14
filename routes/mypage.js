@@ -17,6 +17,7 @@ exports.index = function(req, res) {
 		res.redirect('./');
 	}
 };
+
 exports.logout = function(req, res) {
 	req.session.destroy(function() {
 		console.log("Route: Logout");
@@ -26,7 +27,7 @@ exports.logout = function(req, res) {
 	res.end();
 };
 
-exports.helloMessage = function(req, res) {
+exports.helloMessage = function(req, res) {  //다솜이 시키기
 	var id = req.session.user_id;
 	client.query('select member_name from member where id=?', [id], function(err, rows) {
 		if (err) {

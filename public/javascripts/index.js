@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-	$('#signin_submit').click(function() {
-		var userID = $('#signin_email').val();
-		var userPwd = $('#signin_password').val();
-		var userName = $('#signin_name').val();
-		var userPwd_confirm = $('#password_confirm').val();
+	$('#submitSignin').click(function() {
+		var userID = $('#IDSignin').val();
+		var userPwd = $('#pwdSignin').val();
+		var userName = $('#nameSignin').val();
+		var userPwd_confirm = $('#pwd_confirmSignin').val();
 
 		if (((userID == "") || (userPwd == "")) || (userName == "")) {
 			alert("Insert All Information!!!");
