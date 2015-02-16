@@ -11,8 +11,7 @@ var client = mysql.createConnection(config);
 
 exports.index = function(req,res) {
     if (req.session.user_id) {
-        console.log(req.session.user_id);
-        //res.render('login'); 다솜이꺼 만들고 건들자
+        res.render('mypage');
     } else {
         res.render('index');
     }
@@ -22,13 +21,12 @@ exports.index = function(req,res) {
 exports.login = function(req,res){
     var id = req.body.email;
     var pwd = req.body.password;
-    console.log("???");
 
     client.query('select count(*) as a from member WHERE id=? and pwd=?',[id,pwd],function(error, rows, fields){
         if ( rows[0].a == 0 ) {
             res.send({ "status": "FAIL"});
         } else {
-            req.session.email = id;
+            req.session.user_id = id;
             //res.send({ "status": "SUCCESS"});
             res.render('mypage');
         }

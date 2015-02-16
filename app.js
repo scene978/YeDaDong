@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var mysql = require('mysql');
 
+var routes = require('./routes');
+var mypage = require('./routes/mypage');
+
 var app = express();
 
 var server = http.createServer(app);
@@ -48,7 +51,10 @@ app.post('/login', routes.login);
 app.post('/signin', routes.signin);
 
 //mypage
-app.get('/mypage', function(req,res) {
-    console.log("test");
-    res.render('mypage');
-});
+app.get('/mypage', mypage.index);
+app.get('/mypage/logout', mypage.logout);
+app.get('/mypage/helloMessage', mypage.helloMessage);
+app.post('/mypage/scrollGroupList', mypage.scrollGroupList);
+app.post('/mypage/getGroupList', mypage.getGroupList);
+app.post('/mypage/getWaitingList', mypage.getWaitingList);
+app.post('/mypage/createGroup', mypage.createGroup);
