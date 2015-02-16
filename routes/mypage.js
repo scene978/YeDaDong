@@ -84,7 +84,7 @@ exports.createGroup = function(req, res){
 
     var checkGroupQuery = "select count(*) as groups from group_list WHERE group_name=?";
 	var addGroupQuery = "INSERT INTO group_list(group_name, group_desc, group_state) VALUES (?,?,?)";
-	var addMemberGroupQuery = "	";
+	var addMemberGroupQuery = "INSERT INTO member_group(id, group_name, member_group_state,group_admin) VALUES (?,?,?,?)";
 	
 	client.query(checkGroupQuery, [groupID], function(err, rows) {
 		if ( rows[0].groups != 0 ) {

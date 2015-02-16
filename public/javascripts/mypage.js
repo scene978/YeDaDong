@@ -77,7 +77,6 @@
 			json["groupDesc"] = groupDesc;
 			
 			console.log("group information submit");
-			
 			$.ajax({
 				type : 'post',
 				url : '/mypage/createGroup',
@@ -93,8 +92,7 @@
 			});
 		};
 		
-		addRow();
-		//'groupname_data', 'groupinfo_data'
+		
 		gname_on_congrat_popup();
 		layer_open('congrat_create', 'layer');
 		return false;
@@ -152,18 +150,6 @@ function layer_open(layer_id, higher_layer_class) {
 		window.location.reload(true);
 		// close버튼을 누르면 페이지 초기화->나중에 통신할 때 서버로 값 넘겨주고 초기화할때 값 받아오게 하기
 	});
-}
-
-function addRow() {
-	var groupName = $('#groupname_data').val();
-	var groupinfo = $('#groupinfo_data').val();
-	var groupdel = $('#del_group > div');
-
-	var new_row = "<tr><td>" + groupName + "</td><td>" + groupinfo + "</td><td>" + groupdel + "</td></tr>";
-	$("#my_group_list tr:last").after(new_row);
-	$("#my_group_list tr:last td:first").addClass("group_name");
-	$("#my_group_list tr:last td:nth-child(2)").addClass("group_info");
-	$("#my_group_list tr:last td:last").addClass("del_group");
 }
 
 function gname_on_congrat_popup() {
