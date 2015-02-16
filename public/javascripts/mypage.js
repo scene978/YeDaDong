@@ -66,6 +66,33 @@
 	});
 
 	$("#create_group_ok_btn").click(function() {
+		var groupName = $('#groupname_data').val();
+		var groupDesc = $('#groupinfo_data').val();
+		
+		if ((groupName == "") || (groupDesc == "")) {
+			alert("Insert All Information!!!");
+		} else {
+			var json = {};
+			json["groupID"] = groupName;
+			json["groupDesc"] = groupDesc;
+			
+			console.log("group information submit");
+			
+			$.ajax({
+				type : 'post',
+				url : '/mypage/createGroup',
+				data : json,
+				success : function(result) {
+					if (result.status == "FAIL") {
+						alert('invalid group name or description');
+					} else if (result.status == "SUCCESS") {
+						alert('group create success');
+						console.log("hihi");
+					}
+				}
+			});
+		};
+		
 		addRow();
 		//'groupname_data', 'groupinfo_data'
 		gname_on_congrat_popup();
@@ -125,24 +152,18 @@ function layer_open(layer_id, higher_layer_class) {
 		window.location.reload(true);
 		// close버튼을 누르면 페이지 초기화->나중에 통신할 때 서버로 값 넘겨주고 초기화할때 값 받아오게 하기
 	});
-
-	higher_layer_class.background.click(function(e) {// 배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
-		higher_layer_class.fadeOut();
-		e.preventDefault();
-	});
 }
 
 function addRow() {
-	var groupname = $('#groupname_data').val();
+	var groupName = $('#groupname_data').val();
 	var groupinfo = $('#groupinfo_data').val();
 	var groupdel = $('#del_group > div');
 
-	var new_row = "<tr><td>" + groupname + "</td><td>" + groupinfo + "</td><td>" + groupdel + "</td></tr>";
+	var new_row = "<tr><td>" + groupName + "</td><td>" + groupinfo + "</td><td>" + groupdel + "</td></tr>";
 	$("#my_group_list tr:last").after(new_row);
 	$("#my_group_list tr:last td:first").addClass("group_name");
 	$("#my_group_list tr:last td:nth-child(2)").addClass("group_info");
 	$("#my_group_list tr:last td:last").addClass("del_group");
-
 }
 
 function gname_on_congrat_popup() {
