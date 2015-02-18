@@ -5,6 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
+var ejs = require('ejs');
 var mysql = require('mysql');
 
 var routes = require('./routes');
@@ -16,9 +17,7 @@ var server = http.createServer(app);
 
 // view engine setup
 app.engine('.html', require('ejs').__express);
-
 app.set('views', __dirname + '/views');
-app.engine('.html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.use(session({secret: 'good'}));
@@ -58,3 +57,5 @@ app.post('/mypage/scrollGroupList', mypage.scrollGroupList);
 app.post('/mypage/getGroupList', mypage.getGroupList);
 app.post('/mypage/getWaitingList', mypage.getWaitingList);
 app.post('/mypage/createGroup', mypage.createGroup);
+app.post('/mypage/deleteGroupList', mypage.createGroup);
+app.post('/mypage/deleteWaitingList', mypage.createGroup);

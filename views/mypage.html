@@ -15,7 +15,7 @@
 		<script type="text/javascript" src="/javascripts/bootstrap/default.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.js"></script>
-
+		<script type="text/javascript" src="/javascripts/mustache/mustache.js"></script>
 		<script type="text/javascript" src="/javascripts/mypage.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap.min.css" media="screen" charset="utf-8" />
@@ -181,9 +181,8 @@
 			</div>
 			<div>
 				<form id="form" style="overflow: hidden;" action="./" method="">
-					<table id="my_group_list">
-						
-					</table>
+					<div id="my_group_list"></div>
+					<div id="templates_1" style="display: none;"></div>
 				</form>
 			</div>
 			<div id="title">
@@ -192,14 +191,6 @@
 			<div>
 				<form id="form" style="overflow: hidden;" action="./" method="">
 					<table id="waitingList">
-						<tr>
-							<td class="group_name">Friendasfasfdas</td>
-							<td class="group_info">SKKU basketball club</td>
-							<td class="del_group">
-							<div>
-								<a href="#"><img src="/images/delete84.png" alt="" /></a>
-							</div></td>
-						</tr>
 					</table>
 				</form>
 			</div>

@@ -1,4 +1,25 @@
 ﻿$(document).ready(function() {
+
+	var changeState = function(groupID){
+
+		var json = {};
+		json["email"] = groupID;
+		
+		console.log("~~");
+		
+		$.ajax({
+			type : 'post',
+			url : '/deleteGroupList',
+			data : json,
+			success : function(result) {
+				if (result.status == "FAIL") {
+					console.log("no");
+				} else {
+					console.log("yes");
+				}
+			}
+		});
+	}
 	
 	$.ajax({
 		type : 'get',
@@ -26,12 +47,15 @@
 		type : 'post',
 		url : '/mypage/getGroupList',
 		success : function(data) {
-			
-			var htmlString;
-			$.each(data, function(index,value){
-				htmlString += ("<tr> <td class=\"group_name\"\ id=\""+ data[index].groups + "\">" +data[index].groups+ "</td><td class=\"group_info\">" +data[index].descript +"</td><td class=\"del_group\"><div><a href=\"#\"><img src=\"/images/delete84.png\" alt=\"\" /></a></div></td></tr>");
+			var html="";
+			$("#templates_1").load('template/grouplist.html',function(){
+				var template = $("#template1").html();
+				
+				 $.each(data, function(index,value){
+					html += Mustache.render(template, data[index]);
+					$('#my_group_list').html(html);
+			 	});
 			});
-			$('#my_group_list').html(htmlString);
 		}
 	});
 	
@@ -39,7 +63,7 @@
 		type : 'post',
 		url : '/mypage/getWaitingList',
 		success : function(data) {
-			
+
 			var htmlString;
 			$.each(data, function(index,value){
 				htmlString += ("<tr> <td class=\"group_name\"\ id=\""+ data[index].groups + "\">" +data[index].groups+ "</td><td class=\"group_info\">" +data[index].descript +"</td><td class=\"del_group\"><div><a href=\"#\"><img src=\"/images/delete84.png\" alt=\"\" /></a></div></td></tr>");
@@ -83,16 +107,13 @@
 				data : json,
 				success : function(result) {
 					if (result.status == "FAIL") {
-						alert('invalid group name or description');
+						alert('Already used group name!!');
 					} else if (result.status == "SUCCESS") {
-						alert('group create success');
 						console.log("hihi");
 					}
 				}
 			});
 		};
-		
-		
 		gname_on_congrat_popup();
 		layer_open('congrat_create', 'layer');
 		return false;
@@ -158,3 +179,6 @@ function gname_on_congrat_popup() {
 
 	$("#congrat_create .pop-container .pop-conts p").after(message);
 }
+
+
+

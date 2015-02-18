@@ -101,3 +101,21 @@ exports.createGroup = function(req, res){
     	}
 	});
 };
+
+exports.deleteGroupList = function(req, res){
+	var id = req.session.user_id;
+
+	res.render("test");
+};
+
+exports.deleteWaitingList = function(req, res){
+	var id = req.session.user_id;
+	
+	client.query('select group_name as groups, group_desc as descript  from member_group natural join group_list where id=? and member_group_state=\'2\' and group_state=\'1\'', [id], function(err, rows) {
+		if (err) {
+			console.log(err);
+		} else {
+			res.send(rows);
+		}
+	});
+};
