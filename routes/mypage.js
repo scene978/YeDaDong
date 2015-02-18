@@ -102,20 +102,18 @@ exports.createGroup = function(req, res){
 	});
 };
 
-exports.deleteGroupList = function(req, res){
+exports.changeState = function(req, res){
 	var id = req.session.user_id;
+	var groupID = req.body.groupID;
 
-	res.render("test");
-};
+	var deleteGroupList = "update member_group set member_group_state = '0' where id = ? and group_name = ?";
 
-exports.deleteWaitingList = function(req, res){
-	var id = req.session.user_id;
-	
-	client.query('select group_name as groups, group_desc as descript  from member_group natural join group_list where id=? and member_group_state=\'2\' and group_state=\'1\'', [id], function(err, rows) {
+	client.query(deleteGroupList, [id,groupID], function(err, rows) {
 		if (err) {
 			console.log(err);
 		} else {
-			res.send(rows);
+			console.log("good!!");
+			res.send({ "status": "SUCCESS" });
 		}
 	});
 };

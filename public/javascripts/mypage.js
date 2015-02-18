@@ -1,25 +1,4 @@
 ﻿$(document).ready(function() {
-
-	var changeState = function(groupID){
-
-		var json = {};
-		json["email"] = groupID;
-		
-		console.log("~~");
-		
-		$.ajax({
-			type : 'post',
-			url : '/deleteGroupList',
-			data : json,
-			success : function(result) {
-				if (result.status == "FAIL") {
-					console.log("no");
-				} else {
-					console.log("yes");
-				}
-			}
-		});
-	}
 	
 	$.ajax({
 		type : 'get',
@@ -47,14 +26,13 @@
 		type : 'post',
 		url : '/mypage/getGroupList',
 		success : function(data) {
-			var html="";
-			$("#templates_1").load('template/grouplist.html',function(){
+			$("#templates_1").load('template/list.html',function(){
 				var template = $("#template1").html();
-				
+				var html="";
 				 $.each(data, function(index,value){
 					html += Mustache.render(template, data[index]);
-					$('#my_group_list').html(html);
 			 	});
+				$('#my_group_list').html(html);
 			});
 		}
 	});
@@ -63,12 +41,14 @@
 		type : 'post',
 		url : '/mypage/getWaitingList',
 		success : function(data) {
-
-			var htmlString;
-			$.each(data, function(index,value){
-				htmlString += ("<tr> <td class=\"group_name\"\ id=\""+ data[index].groups + "\">" +data[index].groups+ "</td><td class=\"group_info\">" +data[index].descript +"</td><td class=\"del_group\"><div><a href=\"#\"><img src=\"/images/delete84.png\" alt=\"\" /></a></div></td></tr>");
+			$("#templates_1").load('template/list.html',function(){
+				var template = $("#template1").html();
+				var html="";
+				 $.each(data, function(index,value){
+					html += Mustache.render(template, data[index]);
+					$('#waitingList').html(html);
+			 	});
 			});
-			$('#waitingList').html(htmlString);
 		}
 	});
 	
@@ -134,6 +114,28 @@
 		return false;
 	});
 });
+
+var changeState = function(groupID){
+
+		var json = {};
+		json["groupID"] = groupID;
+		
+		console.log(groupID);
+		
+		$.ajax({
+			type : 'post',
+			url : '/mypage/changeState',
+			data : json,
+			success : function(result) {
+				if (result.status == "SUCCESS") {
+					console.log("yes");
+					window.location.reload(true);
+				} else {
+					console.log("no");
+				}
+			}
+		});
+	}
 
 function layer_open(layer_id, higher_layer_class) {
 

@@ -57,5 +57,4 @@ app.post('/mypage/scrollGroupList', mypage.scrollGroupList);
 app.post('/mypage/getGroupList', mypage.getGroupList);
 app.post('/mypage/getWaitingList', mypage.getWaitingList);
 app.post('/mypage/createGroup', mypage.createGroup);
-app.post('/mypage/deleteGroupList', mypage.createGroup);
-app.post('/mypage/deleteWaitingList', mypage.createGroup);
+app.post('/mypage/changeState', mypage.changeState);
