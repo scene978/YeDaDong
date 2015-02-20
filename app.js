@@ -36,9 +36,10 @@ app.listen(3000,function(){
 });
 
 var config = {
-    host: 'localhost' , 
+    host: '54.64.150.217' , 
     port: '3306' , 
     user: 'root' ,
+    password: 'foxya.!' ,
     database: 'yedadong'
 };
 
