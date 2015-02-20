@@ -117,3 +117,11 @@ exports.changeState = function(req, res){
 		}
 	});
 };
+
+exports.moveGroup = function(req, res){
+	var id = req.session.user_id;
+	var groupID = req.body.groupID;
+	req.session.user_group = groupID;
+
+	res.render('groupHome');
+};

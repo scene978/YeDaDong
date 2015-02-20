@@ -26,7 +26,7 @@
 		type : 'post',
 		url : '/mypage/getGroupList',
 		success : function(data) {
-			$("#templates_1").load('template/list.html',function(){
+			$("#templates_1").load('template/GroupList.html',function(){
 				var template = $("#template1").html();
 				var html="";
 				 $.each(data, function(index,value){
@@ -41,7 +41,7 @@
 		type : 'post',
 		url : '/mypage/getWaitingList',
 		success : function(data) {
-			$("#templates_1").load('template/list.html',function(){
+			$("#templates_1").load('template/waitingList.html',function(){
 				var template = $("#template1").html();
 				var html="";
 				 $.each(data, function(index,value){
@@ -120,8 +120,6 @@ var changeState = function(groupID){
 		var json = {};
 		json["groupID"] = groupID;
 		
-		console.log(groupID);
-		
 		$.ajax({
 			type : 'post',
 			url : '/mypage/changeState',
@@ -136,6 +134,21 @@ var changeState = function(groupID){
 			}
 		});
 	}
+
+var moveGroup = function(groupID){
+
+		var json = {};
+		json["groupID"] = groupID;
+		
+		$.ajax({
+			type : 'post',
+			url : '/mypage/moveGroup',
+			data : json,
+			success : function(result) {
+				$(location).attr('href', '/groupHome');
+			}
+		});
+	}	
 
 function layer_open(layer_id, higher_layer_class) {
 

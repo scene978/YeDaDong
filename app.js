@@ -10,6 +10,7 @@ var mysql = require('mysql');
 
 var routes = require('./routes');
 var mypage = require('./routes/mypage');
+var groupHome = require('./routes/groupHome');
 
 var app = express();
 
@@ -58,3 +59,7 @@ app.post('/mypage/getGroupList', mypage.getGroupList);
 app.post('/mypage/getWaitingList', mypage.getWaitingList);
 app.post('/mypage/createGroup', mypage.createGroup);
 app.post('/mypage/changeState', mypage.changeState);
+app.post('/mypage/moveGroup', mypage.moveGroup);
+
+//groupHome
+app.get('/groupHome', groupHome.index);
