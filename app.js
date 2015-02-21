@@ -35,17 +35,6 @@ app.listen(3000,function(){
     console.log("App Started on PORT 3000");
 });
 
-var config = {
-    host: '54.64.150.217' , 
-    port: '3306' , 
-    user: 'root' ,
-    password: 'foxya.!' ,
-    database: 'yedadong'
-};
-
-var client = mysql.createConnection(config);
-client.connect();
-
 //index
 app.get('/', routes.index);
 app.post('/login', routes.login);
