@@ -101,25 +101,18 @@
 			<input class="detailinputProfile" type="text" placeholder="Living Place" required/><br>
 			<input class="detailinputProfile" type="text" placeholder="E-mail address" required/><br>
 			<input class="detailinputProfile" type="text" placeholder="Contact Number" required/>
-		</div>
-	</div>
-
-	<!-- --------------------------------------------------popup layer starts------------------------------------------------------------ -->
-
-	<div class="layer">
-		<div class="background"></div>
-		<div id="image_upload_popup" class="pop-layer">
-			<div class="pop-container">
-				<div class="pop-conts">
-					
-				</div>
-			</div>
+			<button type="button" id="btnSaveprofile">save</button>
+			<button type="button" id="btnEditprofile">edit</button>
 		</div>
 	</div>
 
 <!-- -----------------------------------------------------------message box-------------------------------------------------------- -->
 <div id="message_box_form">
-		<div class="titleMessagebox">받은 쪽지함</div>
+		<div class="titleMessagebox">
+			<img src="/images/img-2.png" alt="" />
+			받은 쪽지함
+			<button type="button" id="btnSendmessage">+</button>
+		</div>
 		<div>
 			<form class="formMessagebox" style="overflow: hidden;" action="./" method="">
 				<table id="messagelistReceivedmessage">
@@ -131,7 +124,11 @@
 				</table>
 			</form>
 		</div>
-		<div class="titleMessagebox">보낸 쪽지함</div>
+		<div class="titleMessagebox">
+			<img src="/images/img-2.png" alt="" />
+			받은 쪽지함
+			<button type="button" id="btnSendmessage">+</button>
+		</div>
 		<div>
 			<form class="formMessagebox" style="overflow: hidden;" action="./" method="">
 				<table>
