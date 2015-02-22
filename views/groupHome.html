@@ -40,6 +40,11 @@
 
 			</div>
 			<div>
+				<button id="btnGotogroup" type="button">
+					<ins>Group Page</ins>
+				</button>
+			</div>
+			<div>
 				<button type="button" id="btnHelloMessage"></button>
 			</div>
 			<div>
@@ -89,7 +94,7 @@
 			<table cellpadding="15px">
 				<tr>
 					<td>
-						<a href="#" id="imageProfile"><img class="imgclick" style="outline: none;" src="/images/bds1994.jpg" /></a>
+						<a href="#" id="imageProfile"><img class="imgclick" style="outline: none;" src="/images/soolove.png" /></a>
 					</td>
 				</tr>
 			</table>
@@ -102,7 +107,6 @@
 			<input class="detailinputProfile" type="text" placeholder="E-mail address" required/><br>
 			<input class="detailinputProfile" type="text" placeholder="Contact Number" required/>
 			<button type="button" id="btnSaveprofile">save</button>
-			<button type="button" id="btnEditprofile">edit</button>
 		</div>
 	</div>
 
@@ -111,40 +115,100 @@
 		<div class="titleMessagebox">
 			<img src="/images/img-2.png" alt="" />
 			받은 쪽지함
-			<button type="button" id="btnSendmessage">+</button>
+			<a href="#"><button type="button" class="btnSendmessage">+</button></a>
 		</div>
 		<div>
 			<form class="formMessagebox" style="overflow: hidden;" action="./" method="">
-				<table id="messagelistReceivedmessage">
+				<table>
 					<tr>
-						<td class="dateMessagebox">Comedu</td>
-						<td class="textMessagebox">SKKU computer education dept</td>
-						<td class="sendpersonMessagebox"><div><a href="#"><img src="/images/delete84.png" alt="" /></a></div></td>
+						<td colspan="2" class="contMessage">
+							<span class="dateMessagebox">15.02.21</span>
+							<span><a href="#" class="textMessagebox">안녕하세요 박다솜씨</a></span>
+							<span><a href="#" class="sendpersonMessagebox"><strong>아저씨</strong></a></span>
+						</td>
 					</tr>
 				</table>
 			</form>
 		</div>
 		<div class="titleMessagebox">
 			<img src="/images/img-2.png" alt="" />
-			받은 쪽지함
-			<button type="button" id="btnSendmessage">+</button>
+			보낸 쪽지함
+			<a href="#"><button type="button" class="btnSendmessage">+</button></a>
 		</div>
 		<div>
 			<form class="formMessagebox" style="overflow: hidden;" action="./" method="">
 				<table>
 					<tr>
-						<td class="dateMessagebox">Friendasfasfdas</td>
-						<td class="textMessagebox">SKKU basketball club</td>
-						<td class="sendpersonMessagebox"><div>
-								<a href="#"><img src="/images/delete84.png" alt="" /></a>
-							</div></td>
+						<td colspan="2" class="contMessage">
+							<span class="dateMessagebox">15.02.21</span>
+							<span><a href="#" class="textMessagebox">박다솜씨</a></span>
+							<span><a href="#" class="sendpersonMessagebox"><strong>아저씨</strong></a></span>
+						</td>
 					</tr>
 				</table>
 			</form>
 		</div>
 	</div>
 
+<!-- --------------------------------------------------send message layer------------------------------------------------------------ -->
+		<div class="layer">
+			<div class="background"></div>
+			<div id="popupSendmessage" class="poplayerSendmessage">
+				<div class="pop_containerSendmessage">
+					<div class="pop-contsSendmessage">
+						<TABLE class="contSendmessage">
+							<tr>
+								<td colspan="2">
+									제목
+									<input type="text" id="dataMsgtitle" size="20">
+									받는사람
+									<input type="text" id="dataMsgsender" size="20">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									내용
+									<textarea cols="60" id="dataMsgcontent"></textarea>
+								</td>
+							</tr>
 
+						</TABLE>
+						<div class="btnOkclose">
+							<a href="#" id="btnSendmessageok" class="btnOk">Complete</a><a href="#" class="btnClose">Close</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- --------------------------------------------------received message layer------------------------------------------------------------ -->
+		<div class="layer2">
+			<div class="background"></div>
+			<div id="popupRvdmessage" class="poplayerSendmessage">
+				<div class="pop_containerSendmessage">
+					<div class="pop-contsSendmessage">
+						<TABLE class="contSendmessage">
+							<tr>
+								<td colspan="2" id="infoRvdmessage">
+									<span id="date">15.02.21</span>
+									<span id="title">안녕하세요 박다솜씨</span>
+									<span id="sender">아저씨</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<div id="dataMsgcontent">박다솜씨 경비아저씹니다. 오늘은 철야신청 안하시나요?</div>
+								</td>
+							</tr>
+
+						</TABLE>
+						<div class="btnOkclose">
+							<a href="#" id="btnRvdmessageok" class="btnOk">Complete</a><a href="#" class="btnClose">Close</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 </body>
 </html>
