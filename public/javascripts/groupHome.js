@@ -28,7 +28,6 @@ $(document).ready(function() {
 			type : 'get',
 			url : '/mypage/logout',
 			success : function(data) {
-				console.log("Logout Success");
 				$(location).attr('href', '/');
 			}
 		});
