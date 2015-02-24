@@ -1,16 +1,16 @@
 ﻿$(document).ready(function() {
-	
+
 	$.ajax({
 		type : 'get',
-		url : '/mypage/helloMessage',
+		url : '/helloMessage',
 		success : function(data) {
-			$('#btnHelloMessage').html(data.name);
+			$('#btnHelloMessage').html(data.name+"님");
 		}
 	});
 
 	$.ajax({
-		type : 'post',
-		url : '/mypage/scrollGroupList',
+		type : 'get',
+		url : '/scrollGroupList',
 		success : function(data) {
 			
 			var htmlString;
@@ -18,8 +18,17 @@
 				htmlString += "<option value=\"" + data[index].groups+"\">"+data[index].groups+"</option>";
 			});
 			$('#groupList').html(htmlString);
-			
 		}
+	});
+
+	$("#btnLogout").click(function() {
+		$.ajax({
+			type : 'get',
+			url : '/logout',
+			success : function(data) {
+				$(location).attr('href', '/');
+			}
+		});
 	});
 	
 	$.ajax({
@@ -36,7 +45,7 @@
 			});
 		}
 	});
-	
+
 	$.ajax({
 		type : 'post',
 		url : '/mypage/getWaitingList',
@@ -50,18 +59,6 @@
 			 	});
 			});
 		}
-	});
-	
-	$("#btnLogout").click(function() {
-		console.log("Logout click");
-		$.ajax({
-			type : 'get',
-			url : '/mypage/logout',
-			success : function(data) {
-				console.log("Logout Success");
-				$(location).attr('href', '/');
-			}
-		});
 	});
 
 	$("#create_group_btn").click(function() {

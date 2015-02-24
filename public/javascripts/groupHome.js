@@ -1,16 +1,16 @@
 $(document).ready(function() {
-
+	
 	$.ajax({
 		type : 'get',
-		url : '/mypage/helloMessage',
+		url : '/helloMessage',
 		success : function(data) {
-			$('#btnHelloMessage').html(data.name);
+			$('#btnHelloMessage').html(data.name+"님");
 		}
 	});
 
 	$.ajax({
-		type : 'post',
-		url : '/mypage/scrollGroupList',
+		type : 'get',
+		url : '/scrollGroupList',
 		success : function(data) {
 			
 			var htmlString;
@@ -18,32 +18,68 @@ $(document).ready(function() {
 				htmlString += "<option value=\"" + data[index].groups+"\">"+data[index].groups+"</option>";
 			});
 			$('#groupList').html(htmlString);
-			
 		}
 	});
 
 	$("#btnLogout").click(function() {
-		console.log("Logout click");
 		$.ajax({
 			type : 'get',
-			url : '/mypage/logout',
+			url : '/logout',
 			success : function(data) {
 				$(location).attr('href', '/');
 			}
 		});
 	});
-			
-	$("#btnSettingMember").click(function() {
-		console.log("Setting Member menu click");
+
+	$("#btnGotogroup").click(function() {
 		$.ajax({
 			type : 'get',
-			url : '/groupHome/moveSettingMember',
+			url : '/moveMypage',
 			success : function(data) {
-				$(location).attr('href', '/groupHome/moveSettingMember');
+				$(location).attr('href', '/mypage');
 			}
 		});
 	});
-	
+
+	$('#btnHome').click(function() {
+		$.ajax({
+			type : 'get',
+			url : '/moveHome',
+			success : function(data) {
+				$(location).attr('href', '/groupHome');
+			}
+		});
+	});
+
+	$('.freeboard').click(function() {
+		$.ajax({
+			type : 'get',
+			url : '/moveBoard',
+			success : function(data) {
+				$(location).attr('href', '/groupBoard');
+			}
+		});
+	});
+
+	$("#btnSettingMember").click(function() {
+		$.ajax({
+			type : 'get',
+			url : '/moveSettingMember',
+			success : function(data) {
+				$(location).attr('href', '/groupSettingMember');
+			}
+		});
+	});
+
+	$("#btnSettingBoard").click(function() {
+		$.ajax({
+			type : 'get',
+			url : '/moveSettingBoard',
+			success : function(data) {
+				$(location).attr('href', '/groupSettingBoard');
+			}
+		});
+	});
 	/*-----------------------------------------------------Send message popup script----------------------------------------------------------------*/
 
 $(".btnSendmessage").click(function() {
@@ -60,21 +96,6 @@ $(".textMessagebox").click(function() {
 		layer_open('popupRvdmessage', 'layer2');
 		return false;
 	});
-
-$('.freeboard').click(function() {
-	
-	console.log("Board loading");
-	
-	$.ajax({
-		type : 'post',
-		url : '/groupHome/moveBoard',
-		success : function(data) {
-			$(location).attr('href', 'board');
-			console.log("board loading done");
-				//move page
-			}
-	});
-});
 	
 function layer_open(layer_id, higher_layer_class) {
 
