@@ -2,7 +2,7 @@ var DBpool = require('../lib/DBpool');
 
 exports.index = function(req, res) {
 	if (req.session.user_id) {
-		res.render('groupHome');
+		res.render('board');
 	} else {
 		res.redirect('./');
 	}
@@ -45,19 +45,4 @@ exports.scrollGroupList = function(req, res){
 			}
 		});
 	});
-};
-
-exports.moveBoard = function(req,res){
-	var id= req.session.user_id;
-
-    DBpool.acquire(function(err, client) {
-        client.query('select count(*) as a from member WHERE id=?',[id],function(error, rows, fields){
-            if ( rows[0].a == 0 ) {
-                res.send({ "status": "FAIL"});
-            } else {
-            	console.log("dddddddddd");
-                res.render('board');
-            }
-        });
-    });
 };

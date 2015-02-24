@@ -49,6 +49,21 @@ $(".textMessagebox").click(function() {
 		layer_open('popupRvdmessage', 'layer2');
 		return false;
 	});
+
+$('#freeboard').click(function() {
+	
+	console.log("Board loading");
+	
+	$.ajax({
+		type : 'post',
+		url : '/groupHome/moveBoard',
+		success : function(data) {
+			$(location).attr('href', 'board');
+			console.log("board loading done");
+				//move page
+			}
+	});
+});
 	
 function layer_open(layer_id, higher_layer_class) {
 
