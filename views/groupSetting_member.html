@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<title>Colorful Flat by tB3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- -------------------------------------------------java script begins----------------------------------------------------------------- -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/hanna.css" type="text/css" >				<!-- Korean Font style -->
+<link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />	<!-- top-sub-menu style -->
+<link rel="stylesheet" href="/stylesheets/bootstrap/style.css" type="text/css" media="screen" charset="utf-8" />			<!-- background style -->
+<link rel="stylesheet" href="/stylesheets/bootstrap/bootstrap-responsive.min.css"/>											<!-- top-main-menu style -->
+<link rel="stylesheet" href="/stylesheets/bootstrap/jqx.base.css" type="text/css" />
+<link rel="stylesheet" href="/stylesheets/group.css" type="text/css" />
+
+<link rel="stylesheet" href="/stylesheets/groupSetting_member.css" type="text/css" media="screen" charset="utf-8" />
+
+
+<script src="/javascripts/bootstrap/jquery-1.9.1.min.js"></script>											<!-- theme js files -->
+<script src="/javascripts/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<script src="/javascripts/bootstrap/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
+<script src="/javascripts/bootstrap/jquery.easing-1.3.min.js"></script>
+<script src="/javascripts/bootstrap/default.js"></script>
+
+<script type="text/javascript" src="/javascripts/groupSetting_member.js"></script>
+
+</head>
+<body>
+
+	<!-- --------------------------------------------------------header section begins------------------------------------------------ -->
+
+	<div id="headerSection">
+		<div id="toptoolbar">
+			<div>
+				<button id="btnLogout" type="button">
+					<ins>LOGOUT</ins>
+				</button>
+
+			</div>
+			<div>
+				<button id="btnGotogroup" type="button">
+					<ins>Group Page</ins>
+				</button>
+			</div>
+			<div>
+				<button type="button" id="btnHelloMessage"></button>
+			</div>
+			<div>
+				<form name="groupselect" method="POST">
+					<div align="center">
+						<select id="groupList" name="group-dropdown">
+						</select>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+		<div class="container">
+			<div class="span3 logo">
+				<a href="#"><img src="/images/logo1.png" alt="" /></a>
+			</div>
+
+			<div class="navbar">
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li><a href="#homeSection">HOME</a></li>
+						<li class="dropdown"><a href="#boardSection"
+							class="dropdown-toggle" data-toggle="dropdown">BOARD</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">자유게시판</a></li>
+								<li><a href="#">익명게시판</a></li>
+							</ul></li>
+						<li><a href="#familySection">FAMILY</a></li>
+						<li class="dropdown"><a href="#settingSection"
+							class="dropdown-toggle" data-toggle="dropdown">SETTING</a>
+						<ul class="dropdown-menu">
+								<li><a href="#">멤버관리</a></li>
+								<li><a href="#">그룹관리</a></li>
+								<li><a href="#">게시판관리</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- -------------------------------------------------------------Setting Contents Section begins------------------------------------------------- -->
+
+<div id="containerSetting">
+	
+	
+<!-- --------------------------------------------------------Waiting Member begins------------------------------------------------ -->
+
+<div id="SettingMemberSection">
+	<div id="titleSettingMember">
+		멤버관리
+	</div>
+	<div id="waitingmemberSetting">
+		<div id="titleWaiting">
+			- 승인대기회원
+		</div>
+		<div id="listWaiting">
+			<ul class="nav">
+				<p>
+					<span class="dateRequest">신청날짜</span>
+					<span class="nameRequest">이름</span>
+					<span class="IDRequest">아이디(email)</span><br>
+				</p>
+				<p>
+					<span class="dateRequest">15.02.22</span>
+					<span class="nameRequest">남예빈</span>
+					<span class="IDRequest">epfptk423@naver.com</span>
+					<span><button type="button" class="btnAccept">수락</button></span>
+					<span><button type="button" class="btnRefuse">거절</button></span>
+				</p>
+				<p>
+					<span class="dateRequest">15.02.20</span>
+					<span class="nameRequest">이은재</span>
+					<span class="IDRequest">scene978@naver.com</span>
+					<span><button type="button" class="btnAccept">수락</button></span>
+					<span><button type="button" class="btnRefuse">거절</button></span>
+				</p>
+				<p>
+					<span class="dateRequest">15.02.18</span>
+					<span class="nameRequest">정동혁</span>
+					<span class="IDRequest">ddkkd1@naver.com</span>
+					<span><button type="button" class="btnAccept">수락</button></span>
+					<span><button type="button" class="btnRefuse">거절</button></span>
+				</p>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- --------------------------------------------------------Group Member begins------------------------------------------------ -->
+
+<div id="SettingGroupSection">
+	<div id="titleSettingGroup">
+		멤버관리
+	</div>
+	<div id="groupmemberSetting">
+		<div id="titleGroup">
+			- 그룹멤버관리
+		</div>
+		<div id="listGroup">
+			<ul class="nav2">
+				<p>
+					<span class="nameGroup">이름</span>
+					<span class="IDGroup">아이디(email)</span>
+					<span class="gradeGroup">등급</span><br>
+				</p>
+				<p>
+					<span class="nameGroup">박다솜</span>
+					<span class="IDGroup">bds1994@naver.com</span>
+					<span class="gradeGroup">새싹회원</span>
+					<span><button type="button" class="btnSignout">강제탈퇴</button></span>
+					<span><button type="button" class="btnAuthorize">관리자위임</button></span>
+				</p>
+				<p>
+					<span class="nameGroup">김도연</span>
+					<span class="IDGroup">boggh0906@naver.com</span>
+					<span class="gradeGroup">VIP</span>
+					<span><button type="button" class="btnSignout">강제탈퇴</button></span>
+					<span><button type="button" class="btnAuthorize">관리자위임</button></span>
+				</p>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- --------------------------------------------------------Wating Member Accept layer------------------------------------------------ -->
+<div class="layer">
+	<div class="background"></div>
+	<div id="popupAccept" class="poplayerAccept">
+		<div class="pop_containerAccept">
+			<div class="pop-contsAccept">
+				<div class="messageAccept">
+					<span class="nameRequest">남예빈</span>
+					(<span class="IDRequest">epfptk423@naver.com</span>)을 승인하시겠습니까?
+				</div>
+				<div class="btnOkclose">
+					<a href="#" class="btnOk">수락</a>
+					<a href="#" class="btnClose">취소</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- --------------------------------------------------------Wating Member Refuse layer------------------------------------------------ -->
+<div class="layer2">
+	<div class="background"></div>
+	<div id="popupRefuse" class="poplayerRefuse">
+		<div class="pop_containerRefuse">
+			<div class="pop-contsRefuse">
+				<div class="messageRefuse">
+					<span class="nameRequest">남예빈</span>
+					(<span class="IDRequest">epfptk423@naver.com</span>)을 거절하시겠습니까?
+				</div>
+				<div class="btnOkclose">
+					<a href="#" class="btnOk">거절</a>
+					<a href="#" class="btnClose">취소</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- --------------------------------------------------------Group Member Authorize layer------------------------------------------------ -->
+<div class="layer3">
+	<div class="background"></div>
+	<div id="popupAuthorize" class="poplayerAuthorize">
+		<div class="pop_containerAuthorize">
+			<div class="pop-contsAuthorize">
+				<div class="messageAuthorize">
+					<span class="nameRequest">남예빈</span>
+					(<span class="IDRequest">epfptk423@naver.com</span>)을 새로운 관리자로 위임하시겠습니까?
+				</div>
+				<div class="btnOkclose">
+					<a href="#" class="btnOk">위임</a>
+					<a href="#" class="btnClose">취소</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- --------------------------------------------------------Group Member Signout layer------------------------------------------------ -->
+<div class="layer4">
+	<div class="background"></div>
+	<div id="popupSignout" class="poplayerSignout">
+		<div class="pop_containerSignout">
+			<div class="pop-contsSignout">
+				<div class="messageSignout">
+					<span class="nameRequest">남예빈</span>
+					(<span class="IDRequest">epfptk423@naver.com</span>)을 탈퇴시키겠습니까?
+				</div>
+				<div class="btnOkclose">
+					<a href="#" class="btnOk">탈퇴</a>
+					<a href="#" class="btnClose">취소</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>

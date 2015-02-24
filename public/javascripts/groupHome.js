@@ -32,7 +32,18 @@ $(document).ready(function() {
 			}
 		});
 	});
-
+			
+	$("#btnSettingMember").click(function() {
+		console.log("Setting Member menu click");
+		$.ajax({
+			type : 'get',
+			url : '/groupHome/moveSettingMember',
+			success : function(data) {
+				$(location).attr('href', '/groupHome/moveSettingMember');
+			}
+		});
+	});
+	
 	/*-----------------------------------------------------Send message popup script----------------------------------------------------------------*/
 
 $(".btnSendmessage").click(function() {

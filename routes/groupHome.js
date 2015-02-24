@@ -47,6 +47,10 @@ exports.scrollGroupList = function(req, res){
 	});
 };
 
+exports.moveSettingMember = function(req,res) {
+        res.render('groupSetting_member');
+};
+
 exports.moveBoard = function(req,res){
 	var id= req.session.user_id;
 
@@ -60,3 +64,4 @@ exports.moveBoard = function(req,res){
         });
     });
 };
+

@@ -12,7 +12,7 @@ var routes = require('./routes');
 var mypage = require('./routes/mypage');
 var groupHome = require('./routes/groupHome');
 var groupBoard = require('./routes/groupBoard');
-
+var settingMember = require('./routes/groupSetting_member');
 var app = express();
 
 var server = http.createServer(app);
@@ -54,6 +54,7 @@ app.post('/mypage/moveGroup', mypage.moveGroup);
 
 //groupHome
 app.get('/groupHome', groupHome.index);
+app.get('/groupHome/moveSettingMember', groupHome.moveSettingMember);
 app.post('/groupHome/moveBoard', groupHome.moveBoard);
 
 //board

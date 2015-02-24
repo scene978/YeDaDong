@@ -1,0 +1,68 @@
+#containerSetting{width:1150px;height:600px;margin:30px 100px}
+
+/*--------------------------------------------------------Waiting Member style------------------------------------------------*/
+#SettingMemberSection{width:500px; height:500px;margin:0 20px;float:left}
+#SettingMemberSection #titleSettingMember{width:200px;height:50px;font-family: 'Hanna', serif;font-color:#282830; font-size:40px;}
+#SettingMemberSection #waitingmemberSetting{width:1000px; height:400px}
+#SettingMemberSection #titleWaiting{width:200px;height:30px;font-family: 'Hanna', serif;font-color:#282830; font-size:23px;}
+#SettingMemberSection #listWaiting{width:470px; height:400px;border:3px solid #454545;background: #eaeaea; color: #999; border-radius: 5px 5px 0 0}
+#SettingMemberSection .nav{margin:10px 10px;}
+#SettingMemberSection .dateRequest{width:90px;height:30px;font-size:15px;font-family: 'Hanna', serif;float:left;margin-top:3px}
+#SettingMemberSection .nameRequest{width:70px;height:30px;font-size:15px;font-family: 'Hanna', serif;float:left;margin-top:3px}
+#SettingMemberSection .IDRequest{width:180px;height:30px;font-size:15px;font-family: 'Hanna', serif;float:left;margin-top:3px}
+#SettingMemberSection .btnAccept{width:45px;height:30px;font-size:15px;font-family: 'Hanna', serif;float:right;margin-top:3px}
+#SettingMemberSection .btnRefuse{width:45px;height:30px;font-size:15px;font-family: 'Hanna', serif;float:right;margin-top:3px}
+
+
+/*--------------------------------------------------------Group Member style------------------------------------------------*/
+#SettingGroupSection{width:550px; height:500px;margin:0 20px;float:left}
+#SettingGroupSection #titleSettingGroup{width:200px;height:50px;font-family: 'Hanna', serif;font-color:#282830; font-size:40px;}
+#SettingGroupSection #groupmemberSetting{width:1000px; height:400px}
+#SettingGroupSection #titleGroup{width:200px;height:30px;font-family: 'Hanna', serif;font-color:#282830; font-size:23px;}
+#SettingGroupSection #listGroup{width:470px; height:400px;border:3px solid #454545;background: #eaeaea; color: #999; border-radius: 5px 5px 0 0}
+#SettingGroupSection .nav2{margin:10px 10px;}
+#SettingGroupSection .nameGroup{width:70px;height:30px;font-size:15px;font-family: 'Hanna', serif;float:left;margin-top:3px}
+#SettingGroupSection .IDGroup{width:180px;height:30px;font-size:15px;font-family: 'Hanna', serif;float:left;margin-top:3px}
+#SettingGroupSection .gradeGroup{width:70px;height:30px;font-size:15px;font-family: 'Hanna', serif;float:left;margin-top:3px}
+#SettingGroupSection .btnSignout{width:60px;height:30px;font-size:12px;font-family: 'Hanna', serif;float:right;margin-top:3px}
+#SettingGroupSection .btnAuthorize{width:70px;height:30px;font-size:12px;font-family: 'Hanna', serif;float:right;margin-top:3px}
+
+/*--------------------------------------------------------Waiting Member Accept popup style------------------------------------------------*/
+.layer {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
+.layer .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
+.layer .poplayerAccept {display: block;}
+.poplayerAccept{display: none;position: absolute;top: 50%;left: 50%;width: 300px;height: 120px;background-color: #fff;border: 5px solid #454545;z-index: 10;border-radius: 20px;}
+.poplayerAccept .pop_containerAccept {padding: 20px 25px;}
+.poplayerAccept .btnOkclose {width: 100%;margin: 10px 0 20px;padding-top: 10px;border-top: 1px solid #DDD;text-align: right;}
+a.btnClose, a.btnOk {margin-right: 30px;display: inline-block;height: 25px;padding: 0 14px 0;border: 1px solid #454545;background-color: #454545;opacity: 0.6;font-size: 13px;color: #fff;line-height: 25px;font-family: Verdana}
+a.btnClose:hover, a.btnOk:hover {border: 1px solid #454545;background-color: #454545;color: black;}
+
+/*--------------------------------------------------------Waiting Member Refuse popup style------------------------------------------------*/
+.layer2 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
+.layer2 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
+.layer2 .poplayerRefuse {display: block;}
+.poplayerRefuse{display: none;position: absolute;top: 50%;left: 50%;width: 300px;height: 120px;background-color: #fff;border: 5px solid #454545;z-index: 10;border-radius: 20px;}
+.poplayerRefuse .pop_containerRefuse {padding: 20px 25px;}
+.poplayerRefuse .btnOkclose {width: 100%;margin: 10px 0 20px;padding-top: 10px;border-top: 1px solid #DDD;text-align: right;}
+a.btnClose, a.btnOk {margin-right: 30px;display: inline-block;height: 25px;padding: 0 14px 0;border: 1px solid #454545;background-color: #454545;opacity: 0.6;font-size: 13px;color: #fff;line-height: 25px;font-family: Verdana}
+a.btnClose:hover, a.btnOk:hover {border: 1px solid #454545;background-color: #454545;color: black;}
+
+/*--------------------------------------------------------Group Member Authorize popup style------------------------------------------------*/
+.layer3 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
+.layer3 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
+.layer3 .poplayerAuthorize {display: block;}
+.poplayerAuthorize{display: none;position: absolute;top: 50%;left: 50%;width: 300px;height: 120px;background-color: #fff;border: 5px solid #454545;z-index: 10;border-radius: 20px;}
+.poplayerAuthorize .pop_containerAuthorize {padding: 20px 25px;}
+.poplayerAuthorize .btnOkclose {width: 100%;margin: 10px 0 20px;padding-top: 10px;border-top: 1px solid #DDD;text-align: right;}
+a.btnClose, a.btnOk {margin-right: 30px;display: inline-block;height: 25px;padding: 0 14px 0;border: 1px solid #454545;background-color: #454545;opacity: 0.6;font-size: 13px;color: #fff;line-height: 25px;font-family: Verdana}
+a.btnClose:hover, a.btnOk:hover {border: 1px solid #454545;background-color: #454545;color: black;}
+
+/*--------------------------------------------------------Group Member Signout popup style------------------------------------------------*/
+.layer4 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
+.layer4 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
+.layer4 .poplayerSignout {display: block;}
+.poplayerSignout{display: none;position: absolute;top: 50%;left: 50%;width: 300px;height: 120px;background-color: #fff;border: 5px solid #454545;z-index: 10;border-radius: 20px;}
+.poplayerSignout .pop_containerSignout {padding: 20px 25px;}
+.poplayerSignout .btnOkclose {width: 100%;margin: 10px 0 20px;padding-top: 10px;border-top: 1px solid #DDD;text-align: right;}
+a.btnClose, a.btnOk {margin-right: 30px;display: inline-block;height: 25px;padding: 0 14px 0;border: 1px solid #454545;background-color: #454545;opacity: 0.6;font-size: 13px;color: #fff;line-height: 25px;font-family: Verdana}
+a.btnClose:hover, a.btnOk:hover {border: 1px solid #454545;background-color: #454545;color: black;}
