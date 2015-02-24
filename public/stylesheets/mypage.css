@@ -51,14 +51,15 @@ groupselect {
 	padding: 10px
 }
 
-#group_form #form {
+#group_form #my_group_list, #group_form #waitingList{
 	height: 120px;
 	position: relative;
 	background: #eaeaea;
 	color: #999;
 	font: 100%/1.5em verdana;
 	margin: 0;
-	padding: 10px
+	padding: 10px;
+	overflow-y:scroll;
 }
 
 .group_name{
