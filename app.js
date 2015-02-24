@@ -11,7 +11,7 @@ var mysql = require('mysql');
 var routes = require('./routes');
 var mypage = require('./routes/mypage');
 var groupHome = require('./routes/groupHome');
-var board = require('./routes/board');
+var groupBoard = require('./routes/groupBoard');
 
 var app = express();
 
@@ -57,4 +57,4 @@ app.get('/groupHome', groupHome.index);
 app.post('/groupHome/moveBoard', groupHome.moveBoard);
 
 //board
-app.get('/board', board.index);
+app.get('/groupBoard', groupBoard.index);

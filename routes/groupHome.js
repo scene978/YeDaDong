@@ -55,8 +55,7 @@ exports.moveBoard = function(req,res){
             if ( rows[0].a == 0 ) {
                 res.send({ "status": "FAIL"});
             } else {
-            	console.log("dddddddddd");
-                res.render('board');
+                res.render('groupBoard');
             }
         });
     });

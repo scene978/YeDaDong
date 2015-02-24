@@ -58,7 +58,7 @@ $('.freeboard').click(function() {
 		type : 'post',
 		url : '/groupHome/moveBoard',
 		success : function(data) {
-			$(location).attr('href', 'board');
+			$(location).attr('href', 'groupBoard');
 			console.log("board loading done");
 				//move page
 			}
