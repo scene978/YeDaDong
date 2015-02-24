@@ -61,7 +61,7 @@ $(".textMessagebox").click(function() {
 		return false;
 	});
 
-$('#freeboard').click(function() {
+$('.freeboard').click(function() {
 	
 	console.log("Board loading");
 	

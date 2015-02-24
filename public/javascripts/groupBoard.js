@@ -32,4 +32,12 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	$(".pagination > li").click(function() {
+		console.log("pagination click");
+		
+		$(".pagination > li").removeClass("active");
+		$(this).addClass("active");
+		
+	});
 });

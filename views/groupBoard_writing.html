@@ -16,7 +16,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.js"></script>
 
-		<script type="text/javascript" src="/javascripts/board.js"></script>
+		<script type="text/javascript" src="/javascripts/mypage.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap.min.css" media="screen" charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap-responsive.min.css">
@@ -24,30 +24,23 @@
 		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/jqx.base.css" />
 
 		<link rel="stylesheet" type="text/css" href="/stylesheets/mypage.css" />
-		<link rel="stylesheet" type="text/css" href="/stylesheets/board.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/groupBoard_writing.css" />
 
 	</head>
 	<body>
 		<!-- --------------------------------------------------------header section begins------------------------------------------------ -->
-
 	<div id="headerSection">
 		<div id="toptoolbar">
 			<div>
-				<button id="btnLogout" type="button">
-					<ins>LOGOUT</ins>
-				</button>
+				<button id="btnLogout" type="button">LOGOUT</button>
 
 			</div>
 			<div>
-				<button id="btnGotogroup" type="button">
-					<ins>Group Page</ins>
-				</button>
+				<button id="btnHelloMessage" type="button"></button>
+
 			</div>
 			<div>
-				<button type="button" id="btnHelloMessage"></button>
-			</div>
-			<div>
-				<form name="groupselect" method="POST">
+				<form name="groupselect">
 					<div align="center">
 						<select id="groupList" name="group-dropdown">
 						</select>
@@ -69,7 +62,7 @@
 						<li class="dropdown"><a href="#boardSection"
 							class="dropdown-toggle" data-toggle="dropdown">BOARD</a>
 							<ul class="dropdown-menu">
-								<li><a id="freeboard">자유게시판</a></li>
+								<li><a href="#">자유게시판</a></li>
 								<li><a href="#">익명게시판</a></li>
 							</ul></li>
 						<li><a href="#familySection">FAMILY</a></li>
@@ -88,81 +81,43 @@
 
 
 	<div class="box">
-			<div class="box-content">
-			<h1>일반게시판</h1><br>
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th class="col_num">#</th>
-							<th class="col_title">제목</th>
-							<th class="col_name">이름</th>
-							<th class="col_date">날짜</th>
-							<th class="col_view">조회</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="col_num">1</td>
-							<td class="col_title">안녕하세요</td>
-							<td class="col_name">박다솜</td>
-							<td class="col_date">2015.01.01</td>
-							<td class="col_view">7</td>
-						</tr>
-						<tr>
-							<td class="col_num">2</td>
-							<td class="col_title">안녕합니까</td>
-							<td class="col_name">남예빈</td>
-							<td class="col_date">2015.01.01</td>
-							<td class="col_view">23</td>
-						</tr>
-						<tr>
-							<td class="col_num">3</td>
-							<td class="col_title">안녕하다</td>
-							<td class="col_name">정동혁</td>
-							<td class="col_date">2015.01.01</td>
-							<td class="col_view">2</td>
-						</tr>
-						<tr>
-							<td class="col_num">4</td>
-							<td class="col_title">안녕하다</td>
-							<td class="col_name">정동혁</td>
-							<td class="col_date">2015.01.01</td>
-							<td class="col_view">2</td>
-						</tr>
-						<tr>
-							<td class="col_num">5</td>
-							<td class="col_title">안녕하다</td>
-							<td class="col_name">정동혁</td>
-							<td class="col_date">2015.01.01</td>
-							<td class="col_view">2</td>
-						</tr>
-						
-					</tbody>
-				</table>
-			</div>
+		<table>
+			<tr>
+				<td><label class="col-sm-2 control-label" for="form-styles">Title</label>
+				</td>
+				<td>
+					<div class="col-sm-10">
+						<textarea class="form-control" rows="1"></textarea>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><label class="col-sm-2 control-label" for="form-styles">Content</label>
+				</td>
+				<td>
+					<div class="col-sm-10">
+						<textarea class="form-control" rows="12"></textarea>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><div class="file_input">
+						<label id="btnFileAttach"> File Attach <input type="file"
+							onchange="javascript:document.getElementById('file_route').value=this.value">
+						</label> <input type="text" readonly="readonly" title="File Route"
+							id="file_route">
+					</div></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<a href="#" class="btn btn-primary">목록</a>
+					<a href="#" class="btn btn-primary">확인</a>
+					<a href="#" class="btn btn-primary">수정</a>
+				</td>
+			</tr>
 
-			<div id="pagination-content">
-				<ul class="pagination">
-					<li><a href="#">«</a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">»</a></li>
-				</ul>
-				<a href="C:/Users/다솜/Desktop/YeDaDong/views/board_1.html" class="btn btn-primary">글쓰기</a>
-			</div>
+		</table>
 	</div>
-	<div id="searchbox">
-		<select>
-			<option value="writer">작성자</option>
-			<option value="title">글제목</option>
-			<option value="contents">글내용</option>
-		</select>
-		<input type="text" placeholder="Search">
-		<button type="submit" class="btn btn-primary">Search</button>
 
-	</div>
 </body>
 </html>
