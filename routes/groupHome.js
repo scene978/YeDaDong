@@ -46,3 +46,7 @@ exports.scrollGroupList = function(req, res){
 		});
 	});
 };
+
+exports.moveSettingMember = function(req,res) {
+        res.render('settingMember');
+};

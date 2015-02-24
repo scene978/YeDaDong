@@ -1,63 +1,24 @@
 $(document).ready(function() {
 
-	$.ajax({
-		type : 'get',
-		url : '/mypage/helloMessage',
-		success : function(data) {
-			$('#btnHelloMessage').html(data.name);
-		}
-	});
+/*-----------------------------------------------------Send message popup script----------------------------------------------------------------*/
 
-	$.ajax({
-		type : 'post',
-		url : '/mypage/scrollGroupList',
-		success : function(data) {
-			
-			var htmlString;
-			$.each(data, function(index,value){
-				htmlString += "<option value=\"" + data[index].groups+"\">"+data[index].groups+"</option>";
-			});
-			$('#groupList').html(htmlString);
-			
-		}
-	});
-
-	$("#btnLogout").click(function() {
-		console.log("Logout click");
-		$.ajax({
-			type : 'get',
-			url : '/mypage/logout',
-			success : function(data) {
-				$(location).attr('href', '/');
-			}
-		});
-	});
-			
-	$("#btnSettingMember").click(function() {
-		console.log("Setting Member menu click");
-		$.ajax({
-			type : 'get',
-			url : '/groupHome/moveSettingMember',
-			success : function(data) {
-				$(location).attr('href', '/groupHome/moveSettingMember');
-			}
-		});
-	});
-	
-	/*-----------------------------------------------------Send message popup script----------------------------------------------------------------*/
-
-$(".btnSendmessage").click(function() {
-		layer_open('popupSendmessage', 'layer');
+$(".btnAccept").click(function() {
+		layer_open('popupAccept', 'layer');
 		return false;
 	});
 	
-$(".sendpersonMessagebox").click(function() {
-		layer_open('popupSendmessage', 'layer');
+$(".btnRefuse").click(function() {
+		layer_open('popupRefuse', 'layer2');
 		return false;
 	});
-		
-$(".textMessagebox").click(function() {
-		layer_open('popupRvdmessage', 'layer2');
+	
+$(".btnAuthorize").click(function() {
+		layer_open('popupAuthorize', 'layer3');
+		return false;
+	});
+	
+$(".btnSignout").click(function() {
+		layer_open('popupSignout', 'layer4');
 		return false;
 	});
 	

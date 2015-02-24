@@ -11,6 +11,7 @@ var mysql = require('mysql');
 var routes = require('./routes');
 var mypage = require('./routes/mypage');
 var groupHome = require('./routes/groupHome');
+var settingMember = require('./routes/settingMember');
 
 var app = express();
 
@@ -53,3 +54,4 @@ app.post('/mypage/moveGroup', mypage.moveGroup);
 
 //groupHome
 app.get('/groupHome', groupHome.index);
+app.get('/groupHome/moveSettingMember', groupHome.moveSettingMember);

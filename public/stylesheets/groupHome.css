@@ -39,7 +39,8 @@ a.btnClose:hover, a.btnOk:hover {border: 1px solid #454545;background-color: #45
 .poplayerSendmessage .titleMsgpopup{width:60px; height:30px}
 .poplayerSendmessage #dataMsgtitle{width:150px; height:30px}
 .poplayerSendmessage #dataMsgsender{width:70px; height:30px}
-.poplayerSendmessage #dataMsgcontent{margin-top:10px; width:350px; height:160px;border:1px solid #454545}
+.poplayerSendmessage #dataMsgcontent{margin-top:5px; width:350px; height:130px;border:1px solid #454545}
+.poplayerSendmessage #RvdMsgcontent{margin-top:5px; width:350px; height:170px;border:1px solid #454545}
 .poplayerSendmessage #infoRvdmessage{height:30px}
 .poplayerSendmessage #date{width:80px; float:left}
 .poplayerSendmessage #sender{width:60px; float:right}

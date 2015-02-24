@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<title>Colorful Flat by tB3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- -------------------------------------------------java script begins----------------------------------------------------------------- -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/hanna.css" type="text/css" >				<!-- Korean Font style -->
+<link rel="stylesheet" href="../public/stylesheets/bootstrap/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />	<!-- top-sub-menu style -->
+<link rel="stylesheet" href="../public/stylesheets/bootstrap/style.css" type="text/css" media="screen" charset="utf-8" />			<!-- background style -->
+<link rel="stylesheet" href="../public/stylesheets/bootstrap/bootstrap-responsive.min.css"/>											<!-- top-main-menu style -->
+<link rel="stylesheet" href="../public/stylesheets/bootstrap/jqx.base.css" type="text/css" />
+<link rel="stylesheet" href="../public/stylesheets/group.css" type="text/css" />
+
+<link rel="stylesheet" href="../public/stylesheets/settingBoard.css" type="text/css" media="screen" charset="utf-8" />
+
+
+<script src="../public/javascripts/bootstrap/jquery-1.9.1.min.js"></script>											<!-- theme js files -->
+<script src="../public/javascripts/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+<script src="../public/javascripts/bootstrap/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
+<script src="../public/javascripts/bootstrap/jquery.easing-1.3.min.js"></script>
+<script src="../public/javascripts/bootstrap/default.js"></script>
+
+<script type="text/javascript" src="../public/javascripts/settingBoard.js"></script>
+
+</head>
+<body>
+
+	<!-- --------------------------------------------------------header section begins------------------------------------------------ -->
+
+	<div id="headerSection">
+		<div id="toptoolbar">
+			<div>
+				<button id="btnLogout" type="button">
+					<ins>LOGOUT</ins>
+				</button>
+
+			</div>
+			<div>
+				<button id="btnGotogroup" type="button">
+					<ins>Group Page</ins>
+				</button>
+			</div>
+			<div>
+				<button type="button" id="btnHelloMessage"></button>
+			</div>
+			<div>
+				<form name="groupselect" method="POST">
+					<div align="center">
+						<select id="groupList" name="group-dropdown">
+						</select>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+		<div class="container">
+			<div class="span3 logo">
+				<a href="#"><img src="../public/images/logo1.png" alt="" /></a>
+			</div>
+
+			<div class="navbar">
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li><a href="#homeSection">HOME</a></li>
+						<li class="dropdown"><a href="#boardSection"
+							class="dropdown-toggle" data-toggle="dropdown">BOARD</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">자유게시판</a></li>
+								<li><a href="#">익명게시판</a></li>
+							</ul></li>
+						<li><a href="#familySection">FAMILY</a></li>
+						<li class="dropdown"><a href="#settingSection"
+							class="dropdown-toggle" data-toggle="dropdown">SETTING</a>
+						<ul class="dropdown-menu">
+								<li><a href="#">멤버관리</a></li>
+								<li><a href="#">그룹관리</a></li>
+								<li><a href="#">게시판관리</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- -------------------------------------------------------------Setting Contents Section begins------------------------------------------------- -->
+
+<div id="containerSetting">
+	
+<!-- --------------------------------------------------------Board List begins------------------------------------------------ -->
+
+<div id="SettingBoardSection">
+	<div id="titleSettingBoard">
+		- 게시판관리
+	</div>
+	<div id="boardSetting">
+		<div id="listBoard">
+			<ul class="nav">
+				<div class="contBoard">자유게시판<input type ="checkbox" class="selectBoard" value="0" checked></div>
+				<div class="contBoard">익명게시판<input type ="checkbox" class="selectBoard" value="0" checked></div>
+			</ul>
+		</div>
+	</div>
+	<div>
+		<button type="button" id="btnRomove">삭제</button>
+	</div>
+</div>
+
+<!-- --------------------------------------------------------Add Board begins------------------------------------------------ -->
+
+<div id="addBoardSection">
+	<div id="titleAddBoard">
+		게시판 추가
+	</div>
+	<div id="boardAdd">
+		<div id="contBoardAdd">
+			<div>
+				<span id="boardName">게시판명</span>
+				<span><input id="boardnameData" type="text"/></span>
+			</div>
+			<div>
+				<span id="boardForm">형태</span>
+				<span class="selectBoardForm"><input type="checkbox"/>실명</span>
+				<span class="selectBoardForm"><input type="checkbox"/>익명</span>
+			</div>
+		</div>
+	<div>
+		<button type="button" id="btnAdd">추가</button>
+	</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>
