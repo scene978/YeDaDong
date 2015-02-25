@@ -14,6 +14,7 @@ var groupHome = require('./routes/groupHome');
 var groupBoard = require('./routes/groupBoard');
 var groupSettingMember = require('./routes/groupSetting_member');
 var groupSettingBoard = require('./routes/groupSetting_board');
+var groupBoard_writing = require('./routes/groupBoard_writing');
 var movepage = require('./routes/movepage');
 var header = require('./routes/header');
 
@@ -60,6 +61,10 @@ app.get('/groupHome', groupHome.index);
 app.get('/groupBoard', groupBoard.index);
 
 
+//groupBoard_writing
+app.get('/groupBoard_writing', groupBoard_writing.index);
+
+
 //groupFamily
 
 
@@ -77,6 +82,7 @@ app.get('/moveBoard', movepage.moveBoard);
 //app.get('/moveFamily', movepage.moveFamily);
 app.get('/moveSettingMember', movepage.moveSettingMember);
 app.get('/moveSettingBoard', movepage.moveSettingBoard);
+app.get('/moveBoard_writing', movepage.moveBoard_writing);
 
 
 //header

@@ -42,6 +42,7 @@ $(document).ready(function() {
 	});
 
 	$('#btnHome').click(function() {
+		console.log("good");
 		$.ajax({
 			type : 'get',
 			url : '/moveHome',
@@ -79,24 +80,5 @@ $(document).ready(function() {
 				$(location).attr('href', '/groupSettingBoard');
 			}
 		});
-	});
-
-	$("#btnWritingBoard").click(function() {
-		$.ajax({
-			type : 'get',
-			url : '/moveBoard_writing',
-			success : function(data) {
-				$(location).attr('href', '/groupBoard_writing');
-				console.log("good!!");
-			}
-		});
-	});
-	
-	$(".pagination > li").click(function() {
-		console.log("pagination click");
-		
-		$(".pagination > li").removeClass("active");
-		$(this).addClass("active");
-		
 	});
 });

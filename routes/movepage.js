@@ -15,3 +15,7 @@ exports.moveSettingBoard = function(req,res) {
 exports.moveSettingMember = function(req,res) {
         res.render('groupSetting_member');
 };
+
+exports.moveBoard_writing = function(req,res) {
+        res.render('groupBoard_writing');
+};
