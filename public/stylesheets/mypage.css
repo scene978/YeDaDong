@@ -106,6 +106,9 @@ groupselect {
 	opacity: 0.65;
 	font-size: 20px;
 }
+#grouptable button:hover {
+	background-color: #1a242f;
+}
 
 /* --------------------------------------------------popup layer style----------------------------------------------- */
 .layer ,.layer2, .layer3 {
