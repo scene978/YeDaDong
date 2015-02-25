@@ -18,12 +18,14 @@ exports.helloMessage = function(req, res) {
 	DBpool.acquire(function(err, client) {
 		client.query('select member_name from member where id=?', [id], function(err, rows) {
 			if (err) {
+				DBpool.release(client);
 				console.log(err);
 			} else {
 				var name = {
 					'name' : rows[0].member_name
 				};
 				res.send(name);
+				DBpool.release(client);
 			}
 		});
 	});
@@ -35,8 +37,10 @@ exports.scrollGroupList = function(req, res){
 	DBpool.acquire(function(err, client) {
 		client.query('select group_name as groups from member_group natural join group_list where id=? and member_group_state=\'1\' and group_state=\'1\'', [id], function(err, rows) {
 			if (err) {
+				DBpool.release(client);
 				console.log(err);
 			} else {
+				DBpool.release(client);
 				res.send(rows);
 			}
 		});

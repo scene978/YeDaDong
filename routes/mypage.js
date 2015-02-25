@@ -14,8 +14,10 @@ exports.getGroupList = function(req, res){
 	DBpool.acquire(function(err, client) {
 		client.query('select group_name as groups, group_desc as descript  from member_group natural join group_list where id=? and member_group_state=\'1\' and group_state=\'1\'', [id], function(err, rows) {
 			if (err) {
+				DBpool.release(client);
 				console.log(err);
 			} else {
+				DBpool.release(client);
 				res.send(rows);
 			}
 		});
@@ -28,8 +30,10 @@ exports.getWaitingList = function(req, res){
 	DBpool.acquire(function(err, client) {
 		client.query('select group_name as groups, group_desc as descript  from member_group natural join group_list where id=? and member_group_state=\'2\' and group_state=\'1\'', [id], function(err, rows) {
 			if (err) {
+				DBpool.release(client);
 				console.log(err);
 			} else {
+				DBpool.release(client);
 				res.send(rows);
 			}
 		});
@@ -48,11 +52,13 @@ exports.createGroup = function(req, res){
 	DBpool.acquire(function(err, client) {
 		client.query(checkGroupQuery, [groupID], function(err, rows) {
 			if ( rows[0].groups != 0 ) {
-	           res.send({ "status": "FAIL"});
+				DBpool.release(client);
+	        	res.send({ "status": "FAIL"});
 	    	}
 	       else {
 		        client.query(addGroupQuery,[groupID, groupDesc, "1"],function(error, rows, fields){
 		            client.query(addMemberGroupQuery,[id, groupID, "1", "1"],function(error, rows, fields){
+		            	DBpool.release(client);
 		            	res.send({ "status": "SUCCESS" });
 		        	});
 		        });
@@ -70,8 +76,10 @@ exports.changeState = function(req, res){
 	DBpool.acquire(function(err, client) {
 		client.query(deleteGroupList, [id,groupID], function(err, rows) {
 			if (err) {
+				DBpool.release(client);
 				console.log(err);
 			} else {
+				DBpool.release(client);
 				res.send({ "status": "SUCCESS" });
 			}
 		});
