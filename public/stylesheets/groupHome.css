@@ -1,46 +1,297 @@
-
 /* ------------------------------------------------profile image section style---------------------------------------------------------- */
-#infoProfile{width:600px;height:340px;font-family:'Hanna',serif;margin:0 auto;background:#eaeaea;float:left;margin-left:100px;margin-top:70px;position:relative;
-  			box-shadow: 10px 10px 5px rgba(0,0,0,0.25), 0 0 50px rgba(0,0,0,0.1) inset;
-  			border-radius: 5%     5%     1%     1% /     1%     1%     1%     1%}
-#infoProfile #basicProfile{float:left; width:250px; height:380px}
-#infoProfile #detailProfile{float:left; width:300px; height:380px;margin-top:60px; margin-left:30px}
-#infoProfile #nameinputProfile{margin-left:15px; font-family: 'Hanna', serif; height: 40px; width:250px; font-color:#282830; font-size:40px; border-color:#eaeaea; background: #eaeaea;}
-#infoProfile #jobinputProfile{margin-left:15px; font-family: 'Hanna', serif; height: 20px; width:250px; font-color:#282830; font-size:25px; border-color:#eaeaea; background: #eaeaea;}
-#infoProfile .detailinputProfile{margin-left:15px; font-family: 'Hanna', serif; height: 15px; width:250px; font-color:#282830; font-size:15px; border-color:#eaeaea; background: #eaeaea;}
-#infoProfile #btnEditprofile{background-color: #282830;color: #fff;height: 30px; width:50px;border-width:0;float:right;margin-right: 5px}
-#infoProfile #btnSaveprofile{background-color: #282830;color: #fff;height: 30px; width:50px;border-width:0;float:right}
-#imageProfile{float:left;margin-top:40px; margin-left:30px;width:230px; border:0;height:230px}
+#infoProfile {
+	width: 600px;
+	height: 340px;
+	font-family: 'Hanna', serif;
+	margin: 0 auto;
+	background: #eaeaea;
+	float: left;
+	margin-left: 100px;
+	margin-top: 70px;
+	position: relative;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25), 0 0 50px
+		rgba(0, 0, 0, 0.1) inset;
+	border-radius: 5% 5% 1% 1%/1% 1% 1% 1%
+}
+
+#infoProfile #basicProfile {
+	float: left;
+	width: 250px;
+	height: 380px
+}
+
+#infoProfile #detailProfile {
+	float: left;
+	width: 300px;
+	height: 380px;
+	margin-top: 60px;
+	margin-left: 30px
+}
+
+#infoProfile #nameinputProfile {
+	margin-left: 15px;
+	font-family: 'Hanna', serif;
+	height: 40px;
+	width: 250px;
+	font-color: #282830;
+	font-size: 40px;
+	border-color: #eaeaea;
+	background: #eaeaea;
+}
+
+#infoProfile #jobinputProfile {
+	margin-left: 15px;
+	font-family: 'Hanna', serif;
+	height: 20px;
+	width: 250px;
+	font-color: #282830;
+	font-size: 25px;
+	border-color: #eaeaea;
+	background: #eaeaea;
+}
+
+#infoProfile .detailinputProfile {
+	margin-left: 15px;
+	font-family: 'Hanna', serif;
+	height: 15px;
+	width: 250px;
+	font-color: #282830;
+	font-size: 15px;
+	border-color: #eaeaea;
+	background: #eaeaea;
+}
+
+#infoProfile #btnEditprofile {
+	background-color: #282830;
+	color: #fff;
+	height: 30px;
+	width: 50px;
+	border-width: 0;
+	float: right;
+	margin-right: 5px
+}
+
+#infoProfile #btnSaveprofile {
+	background-color: #282830;
+	color: #fff;
+	height: 30px;
+	width: 50px;
+	border-width: 0;
+	float: right
+}
+
+#imageProfile {
+	float: left;
+	margin-top: 40px;
+	margin-left: 30px;
+	width: 230px;
+	border: 0;
+	height: 230px
+}
 
 /* --------------------------------------------------------------message box style--------------------------------------------------------------- */
+#message_box_form {
+	width: 440px;
+	font-family: 'Hanna', serif;
+	font-size: 14px;
+	display: block;
+	float: right;
+	margin-right: 100px;
+	margin-top: 50px
+}
 
-#message_box_form {width: 440px; font-family: 'Hanna', serif; font-size: 14px; display: block; float:right; margin-right:100px; margin-top:50px}
-#message_box_form .titleMessagebox {background-color: #282830; border-radius: 5px 5px 0 0; color: #fff; font-size: 20px; text-align: center; text-transform: uppercase; padding: 10px}
-#message_box_form img{width: 30px; margin-right: 0px}
-#message_box_form .btnSendmessage{background-color: #282830;color: #fff;border-width:0; font-size:20px; float:right}
-#message_box_form .formMessagebox {height: 120px; width: 420px; position: relative; background: #eaeaea; color: #999; font: 100%/1.5em verdana; margin: 0; padding: 10px}
-#message_box_form .contMessage{width:420px}
-#message_box_form .dateMessagebox{padding: 2px 10px; width: 80px; table-layout:fixed; word-break:break-all; color: black;float:left}
-#message_box_form .textMessagebox{padding: 2px 10px; width: 260px; padding-right: 5px;color: black;}
-#message_box_form .sendpersonMessagebox{padding: 2px 10px; float: right; width: 60px; text-align:center; color:#282830}
+#message_box_form .titleMessagebox {
+	background-color: #282830;
+	border-radius: 5px 5px 0 0;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 10px
+}
+
+#message_box_form img {
+	width: 30px;
+	margin-right: 0px
+}
+
+#message_box_form .btnSendmessage {
+	background-color: #282830;
+	color: #fff;
+	border-width: 0;
+	font-size: 20px;
+	float: right
+}
+
+#message_box_form .formMessagebox {
+	height: 120px;
+	width: 420px;
+	position: relative;
+	background: #eaeaea;
+	color: #999;
+	font: 100%/1.5em verdana;
+	margin: 0;
+	padding: 10px;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+#message_box_form .contMessage {
+	width: 420px
+}
+
+#message_box_form .dateMessagebox {
+	padding: 2px 10px;
+	width: 80px;
+	table-layout: fixed;
+	word-break: break-all;
+	color: black;
+	float: left
+}
+
+#message_box_form .textMessagebox {
+	padding: 2px 10px;
+	width: 260px;
+	padding-right: 5px;
+	color: black;
+}
+
+#message_box_form .sendpersonMessagebox {
+	padding: 2px 10px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	color: #282830
+}
 
 /* --------------------------------------------------popup layer style----------------------------------------------- */
-.layer ,.layer2, .layer3 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
-.layer .background , .layer2 .background, .layer3 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
-.layer .poplayerSendmessage , .layer2 .poplayerSendmessage, .layer3 .poplayerSendmessage {display: block;}
-.poplayerSendmessage, #congrat_create {display: none;position: absolute;top: 50%;left: 50%;width: 410px;height: 300px;background-color: #fff;border: 5px solid #454545;z-index: 10;border-radius: 20px;}
-.poplayerSendmessage .pop_containerSendmessage {padding: 20px 25px;}
-.poplayerSendmessage p.ctxt {color: #666;line-height: 25px;}
-.poplayerSendmessage .btnOkclose {width: 100%;margin: 10px 0 20px;padding-top: 10px;border-top: 1px solid #DDD;text-align: right;}
-a.btnClose, a.btnOk {margin-right: 30px;display: inline-block;height: 25px;padding: 0 14px 0;border: 1px solid #454545;background-color: #454545;opacity: 0.6;font-size: 13px;color: #fff;line-height: 25px;font-family: Verdana}
-a.btnClose:hover, a.btnOk:hover {border: 1px solid #454545;background-color: #454545;color: black;}
-.pop-contsSendmessage div {float: right;display: inline-block;}
-.poplayerSendmessage .contSendmessage{width:360px}
-.poplayerSendmessage .titleMsgpopup{width:60px; height:30px}
-.poplayerSendmessage #dataMsgtitle{width:150px; height:30px}
-.poplayerSendmessage #dataMsgsender{width:70px; height:30px}
-.poplayerSendmessage #dataMsgcontent{margin-top:5px; width:350px; height:130px;border:1px solid #454545}
-.poplayerSendmessage #RvdMsgcontent{margin-top:5px; width:350px; height:170px;border:1px solid #454545}
-.poplayerSendmessage #infoRvdmessage{height:30px}
-.poplayerSendmessage #date{width:80px; float:left}
-.poplayerSendmessage #sender{width:60px; float:right}
+.layer, .layer2, .layer3 {
+	display: none;
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	font-family: Verdana;
+	font-size: 14px
+}
+
+.layer .background, .layer2 .background, .layer3 .background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .5;
+	filter: alpha(opacity = 50);
+}
+
+.layer .poplayerSendmessage, .layer2 .poplayerSendmessage, .layer3 .poplayerSendmessage
+	{
+	display: block;
+}
+
+.poplayerSendmessage, #congrat_create {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 410px;
+	height: 300px;
+	background-color: #fff;
+	border: 5px solid #454545;
+	z-index: 10;
+	border-radius: 20px;
+}
+
+.poplayerSendmessage .pop_containerSendmessage {
+	padding: 20px 25px;
+}
+
+.poplayerSendmessage p.ctxt {
+	color: #666;
+	line-height: 25px;
+}
+
+.poplayerSendmessage .btnOkclose {
+	width: 100%;
+	margin: 10px 0 20px;
+	padding-top: 10px;
+	border-top: 1px solid #DDD;
+	text-align: right;
+}
+
+a.btnClose, a.btnOk {
+	margin-right: 30px;
+	display: inline-block;
+	height: 25px;
+	padding: 0 14px 0;
+	border: 1px solid #454545;
+	background-color: #454545;
+	opacity: 0.6;
+	font-size: 13px;
+	color: #fff;
+	line-height: 25px;
+	font-family: Verdana
+}
+
+a.btnClose:hover, a.btnOk:hover {
+	border: 1px solid #454545;
+	background-color: #454545;
+	color: black;
+}
+
+.pop-contsSendmessage div {
+	float: right;
+	display: inline-block;
+}
+
+.poplayerSendmessage .contSendmessage {
+	width: 360px
+}
+
+.poplayerSendmessage .titleMsgpopup {
+	width: 60px;
+	height: 30px
+}
+
+.poplayerSendmessage #dataMsgtitle {
+	width: 150px;
+	height: 30px
+}
+
+.poplayerSendmessage #dataMsgsender {
+	width: 70px;
+	height: 30px
+}
+
+.poplayerSendmessage #dataMsgcontent {
+	margin-top: 5px;
+	width: 350px;
+	height: 130px;
+	border: 1px solid #454545
+}
+
+.poplayerSendmessage #RvdMsgcontent {
+	margin-top: 5px;
+	width: 350px;
+	height: 170px;
+	border: 1px solid #454545
+}
+
+.poplayerSendmessage #infoRvdmessage {
+	height: 30px
+}
+
+.poplayerSendmessage #date {
+	width: 80px;
+	float: left
+}
+
+.poplayerSendmessage #sender {
+	width: 60px;
+	float: right
+}

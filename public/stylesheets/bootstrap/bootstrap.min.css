@@ -694,9 +694,6 @@ pre code {
 	max-height:340px;
 	overflow-y:scroll
 }
-form {
-	margin:0 0 20px
-}
 fieldset {
 	padding:0;
 	margin:0;
@@ -3175,9 +3172,8 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', end
 .navbar .nav>li>a {
 	float:none;
 	padding:10px 15px 10px;
-	
 	text-decoration:none;
-	
+	font-family: verdana
 }
 .navbar .nav .dropdown-toggle .caret {
 	margin-top:8px
