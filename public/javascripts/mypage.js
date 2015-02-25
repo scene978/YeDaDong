@@ -61,6 +61,37 @@
 		}
 	});
 
+	$("#sb").click(function() {
+		var groupNameSearch = $('#sf').val();
+
+		if( groupNameSearch == ""){
+			alert("Invalid group name");
+		} else {
+			var json = {};
+			json["searchValue"] = groupNameSearch;
+
+			$.ajax({
+				type : 'post',
+				url : '/mypage/searchGroup',
+				data : json,
+				success : function(data) {
+					console.log("a");
+					console.log(data[0]);
+					console.log(data[1]);
+
+					$("#templates_2").load('template/searchGroup.html',function(){
+					 	var template = $("#groupSearch").html();
+					 	var html="";
+						 $.each(data, function(index,value){
+							html += Mustache.render(template, data[index]);
+					 });
+						$('#searchGroupResult').html(html);
+					});
+				}
+			});
+		}
+	});
+
 	$("#create_group_btn").click(function() {
 		layer_open('create_group_popup', 'layer');
 		return false;
@@ -97,6 +128,8 @@
 	});
 
 	$("#search_group_btn").click(function() {
+		var html="";
+		$('#searchGroupResult').html(html);
 		layer_open('search_group_popup', 'layer2');
 		return false;
 	});
@@ -180,7 +213,7 @@ function layer_open(layer_id, higher_layer_class) {
 		}
 		e.preventDefault();
 
-		window.location.reload(true);
+		//window.location.reload(true);
 		// close버튼을 누르면 페이지 초기화->나중에 통신할 때 서버로 값 넘겨주고 초기화할때 값 받아오게 하기
 	});
 }

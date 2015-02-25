@@ -51,6 +51,7 @@ app.post('/mypage/getWaitingList', mypage.getWaitingList);
 app.post('/mypage/createGroup', mypage.createGroup);
 app.post('/mypage/changeState', mypage.changeState);
 app.post('/mypage/moveGroup', mypage.moveGroup);
+app.post('/mypage/searchGroup', mypage.searchGroup);
 
 
 //groupHome
@@ -74,7 +75,7 @@ app.get('/groupSettingMember', groupSettingMember.index);
 
 //groupSettingBoard
 app.get('/groupSettingBoard', groupSettingBoard.index);
-
+//app.post('/groupSettingBoard/getGroupList', groupSettingBoard.getGroupList);
 
 //movepage
 app.get('/moveHome', movepage.moveHome);

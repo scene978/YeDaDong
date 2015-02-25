@@ -8,3 +8,20 @@ exports.index = function(req, res) {
 	}
 };
 
+exports.getBoardList = function(req, res){
+	var groupID = req.body.groupID;
+	
+	var getBoardList = 'select board_name as board from boards natural join group_list where group_name=? and board_status!=\'0\'';
+
+	DBpool.acquire(function(err, client) {
+		client.query(getBoardList, [groupID], function(err, rows) {
+			if (err) {
+				DBpool.release(client);
+				console.log(err);
+			} else {
+				DBpool.release(client);
+				res.send(rows);
+			}
+		});
+	});
+};

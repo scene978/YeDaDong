@@ -93,3 +93,19 @@ exports.moveGroup = function(req, res){
 
 	res.render('groupHome');
 };
+
+exports.searchGroup = function(req, res){
+	
+	DBpool.acquire(function(err, client) {
+		client.query('select group_name as groups, group_desc as descript from group_list where group_name like "%' + req.body.searchValue + '%"', function(err,rows) {
+			if(err) {
+				DBpool.release(client);
+				console.log(err);
+			} else {
+				console.log(rows);
+				res.send(rows);
+				DBpool.release(client);
+			}
+		});
+	});
+};
