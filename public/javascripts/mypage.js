@@ -224,6 +224,3 @@ function gname_on_congrat_popup() {
 
 	$("#congrat_create .pop-container .pop-conts p").after(message);
 }
-
-
-

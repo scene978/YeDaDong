@@ -9,7 +9,7 @@ exports.index = function(req, res) {
 };
 
 exports.getBoardList = function(req, res){
-	var groupID = req.body.groupID;
+	var groupID = req.session.user_group;
 	
 	var getBoardList = 'select board_name as board from boards natural join group_list where group_name=? and board_status!=\'0\'';
 
@@ -19,8 +19,8 @@ exports.getBoardList = function(req, res){
 				DBpool.release(client);
 				console.log(err);
 			} else {
-				DBpool.release(client);
 				res.send(rows);
+				DBpool.release(client);
 			}
 		});
 	});

@@ -20,6 +20,21 @@ $(document).ready(function() {
 			$('#groupList').html(htmlString);
 		}
 	});
+	
+	$.ajax({
+		type : 'get',
+		url : '/groupSettingBoard/getBoardList',
+		success : function(data) {
+			$("#templates_3").load('template/boardList.html',function(){
+			 	var template = $("#boardList").html();
+			 	var html="";
+				 $.each(data, function(index,value){
+					html += Mustache.render(template, data[index]);
+			 });
+				$('#listBoard').html(html);
+			});
+		}
+	});
 
 	$("#btnLogout").click(function() {
 		$.ajax({
@@ -80,4 +95,6 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	
 });

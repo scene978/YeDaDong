@@ -75,6 +75,7 @@ app.get('/groupSettingMember', groupSettingMember.index);
 
 //groupSettingBoard
 app.get('/groupSettingBoard', groupSettingBoard.index);
+app.get('/groupSettingBoard/getBoardList', groupSettingBoard.getBoardList);
 //app.post('/groupSettingBoard/getGroupList', groupSettingBoard.getGroupList);
 
 //movepage
