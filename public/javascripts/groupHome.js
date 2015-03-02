@@ -80,6 +80,79 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	/*
+	$('#btnSaveprofile').click(function() {
+			var name = $('#nameinputProfile').val();
+			var job = $('#jobinputProfile').val();
+			var age = $('#age').val();
+			var place = $('#place').val();
+			var email = $('#email').val();
+			var contact = $('#contact').val();
+			
+			var json = {};
+			json["member_name"] = name;
+			json["age"] = age;
+			json["location"] = place;
+			json["id"] = email;
+			json["contact"] = contact;
+	
+			$.ajax({
+				type : 'post',
+				url : '/groupHome/imageUpload',
+				data : json,
+				success : function(result) {
+					alert('Saving profile data success!');
+				}
+			});
+		});
+		
+		$('#btnSendmessageok').click(function() {
+			var title = $('#dataMsgtitle').val();
+			//var sendingPerson = $('data.ID').val(); 			占쎈��껃칰占쏙옙�롫뮉野껓옙筌띿쉶�쀥쳞�곻옙 筌뤴뫀�ㅵ칰醫롫뮶
+			var receivingPerson = $('#dataMsgsender').val();
+			var content = $('#dataMsgcontent').val();
+			
+			var json = {};
+			json["message_title"] = title;
+			//json["sender_id"] = sendingPerson;			占쎄쑴肉됬댆占쏙쭕�롮몵筌롳옙揶쏆늿��占썩뫁竊쒏묾占�
+			json["receiver_id"] = receivingPerson;
+			json["message_content"] = content;
+	
+			$.ajax({
+				type : 'post',
+				url : '/groupHome/sendMessage',
+				data : json,
+				success : function(result) {
+					alert('Saveing sending message data success!');
+				}
+			});
+		});
+		
+		$('#btnRvdmessageok').click(function() {
+			var date = $('#date').val();
+			var title = $('#title').val();
+			var sender = $('#sender').val();
+			var content = $('#RvdMsgcontent').val();
+			
+			var json = {};
+			//json["date"] = date;
+			json["message_title"] = title;
+			json["sender_id"] = sender;
+			json["message_content"] = content;
+	
+			$.ajax({
+				type : 'post',
+				url : '/groupHome/receivedMessage',
+				data : json,
+				success : function(result) {
+					alert('Saveing received message data success!');
+				}
+			});
+		});
+	*/
+	
+	
 	/*-----------------------------------------------------Send message popup script----------------------------------------------------------------*/
 
 $(".btnSendmessage").click(function() {
@@ -94,6 +167,11 @@ $(".sendpersonMessagebox").click(function() {
 		
 $(".textMessagebox").click(function() {
 		layer_open('popupRvdmessage', 'layer2');
+		return false;
+	});
+	
+$("#btnImageUpload").click(function() {
+		layer_open('popupImageUpload', 'layer3');
 		return false;
 	});
 	
