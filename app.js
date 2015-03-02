@@ -64,6 +64,8 @@ app.get('/groupBoard', groupBoard.index);
 
 //groupBoard_writing
 app.get('/groupBoard_writing', groupBoard_writing.index);
+//app.post('/groupBoard_writing/writeBoard', groupBoard_writing.writeBoard);
+//app.post('/groupBoard_writing/loadList', groupBoard_writing.loadList);
 
 
 //groupFamily
