@@ -56,6 +56,11 @@ app.post('/mypage/searchGroup', mypage.searchGroup);
 
 //groupHome
 app.get('/groupHome', groupHome.index);
+/*
+app.post('/groupHome/imageUpload', groupHome.imageUpload);
+app.post('/groupHome/sendMessage', groupHome.sendMessage);
+app.post('/groupHome/receivedMessage', groupHome.receivedMessage);*/
+
 
 
 //groupBoard
