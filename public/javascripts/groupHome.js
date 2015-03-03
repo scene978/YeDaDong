@@ -20,7 +20,32 @@ $(document).ready(function() {
 			$('#groupList').html(htmlString);
 		}
 	});
-
+	
+	/*
+		$.ajax({
+			type : 'get',
+			url : 'groupHome/rvdMessage',
+			success : function(data) {
+				$('#rvdDate').html(data.date);
+				$('#rvdTitle').html(data.message_title);
+				$('#rvdSender').html(data.sender_id);
+			}
+		});
+		
+		$.ajax({
+			type : 'get',
+			url : 'groupHome/getProfile',
+			success : function(data) {
+				$('#nameinputProfile').html(data.member_name);
+				$('#jobinputProfile').html(data.job);
+				$('#age').html(data.age);
+				$('#place').html(data.place);
+				$('#email').html(data.email);
+				$('#contact').html(data.contact);
+			}
+		});
+	*/
+	
 	$("#btnLogout").click(function() {
 		$.ajax({
 			type : 'get',
@@ -112,12 +137,14 @@ $(document).ready(function() {
 			//var sendingPerson = $('data.ID').val(); 			占쎈��껃칰占쏙옙�롫뮉野껓옙筌띿쉶�쀥쳞�곻옙 筌뤴뫀�ㅵ칰醫롫뮶
 			var receivingPerson = $('#dataMsgsender').val();
 			var content = $('#dataMsgcontent').val();
+			//var date = $.datepicker.formatDate('yy/mm/dd', new Date()); 	 //today's date
 			
 			var json = {};
 			json["message_title"] = title;
 			//json["sender_id"] = sendingPerson;			占쎄쑴肉됬댆占쏙쭕�롮몵筌롳옙揶쏆늿��占썩뫁竊쒏묾占�
 			json["receiver_id"] = receivingPerson;
 			json["message_content"] = content;
+			//json["date"] = date; 				 //today's date
 	
 			$.ajax({
 				type : 'post',
@@ -125,31 +152,36 @@ $(document).ready(function() {
 				data : json,
 				success : function(result) {
 					alert('Saveing sending message data success!');
+					$('#sendDate').html(date);
+					$('#rvdTitle').html(title);
+					$('#rvdReceiver').html(receivingPerson);
 				}
 			});
 		});
 		
-		$('#btnRvdmessageok').click(function() {
-			var date = $('#date').val();
-			var title = $('#title').val();
-			var sender = $('#sender').val();
-			var content = $('#RvdMsgcontent').val();
+		$('#btnImageUpload').click(function() {
+			var image = $('#imageProfile').val();
 			
 			var json = {};
-			//json["date"] = date;
 			json["message_title"] = title;
-			json["sender_id"] = sender;
+			//json["sender_id"] = sendingPerson;			占쎄쑴肉됬댆占쏙쭕�롮몵筌롳옙揶쏆늿��占썩뫁竊쒏묾占�
+			json["receiver_id"] = receivingPerson;
 			json["message_content"] = content;
+			//json["date"] = date; 				 //today's date
 	
 			$.ajax({
 				type : 'post',
-				url : '/groupHome/receivedMessage',
+				url : '/groupHome/sendMessage',
 				data : json,
 				success : function(result) {
-					alert('Saveing received message data success!');
+					alert('Saveing sending message data success!');
+					$('#sendDate').html(date);
+					$('#rvdTitle').html(title);
+					$('#rvdReceiver').html(receivingPerson);
 				}
 			});
 		});
+		
 	*/
 	
 	
