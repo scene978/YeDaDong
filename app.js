@@ -52,6 +52,7 @@ app.post('/mypage/createGroup', mypage.createGroup);
 app.post('/mypage/changeState', mypage.changeState);
 app.post('/mypage/moveGroup', mypage.moveGroup);
 app.post('/mypage/searchGroup', mypage.searchGroup);
+app.post('/mypage/joinGroup', mypage.joinGroup);
 
 
 //groupHome

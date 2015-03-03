@@ -102,9 +102,46 @@ exports.searchGroup = function(req, res){
 				DBpool.release(client);
 				console.log(err);
 			} else {
-				console.log(rows);
 				res.send(rows);
 				DBpool.release(client);
+			}
+		});
+	});
+};
+
+
+exports.joinGroup = function(req, res){
+
+	var id = req.session.user_id;
+	var groupID = req.body.groupID;
+
+	var checkGroup = "select count(*) as groups from member_group WHERE id=? and group_name=?";
+	var joinGroup_new = "insert into member_group (id,group_name,member_group_state,group_admin) values (?,?,2,2)";
+	var reJoinGroup = "update member_group set member_group_state = '2' where id = ? and group_name = ?";
+	
+	DBpool.acquire(function(err, client) {
+		client.query(checkGroup,[id,groupID], function(err,rows) {
+			if(rows[0].groups != 0) {
+				client.query(reJoinGroup,[id,groupID], function(err,rows) {
+					if(err) {
+						DBpool.release(client);
+						console.log(err);
+					} else {
+						res.send(rows);
+						DBpool.release(client);
+					}
+				});
+			}
+			else {
+				client.query(joinGroup_new,[id,groupID], function(err,rows) {
+					if(err) {
+						DBpool.release(client);
+						console.log(err);
+					} else {
+						res.send(rows);
+						DBpool.release(client);
+					}
+				});
 			}
 		});
 	});
