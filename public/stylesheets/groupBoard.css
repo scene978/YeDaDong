@@ -5,7 +5,8 @@
 	margin: auto;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #333333;
-	height: 380px
+	height: 380px;
+	position: relative;
 }
 
 .box-content {
@@ -28,9 +29,9 @@ tr td:last-child, tr th:last-child {
 #pagination-content {
 	display: inline-block;
 	width: 100%;
-	margin-top: 0;
 	height: 50px;
-	bottom: 0
+	bottom: 8px;
+	position: absolute;
 }
 .pagination {
   display: inline-block;
