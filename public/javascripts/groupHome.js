@@ -20,9 +20,9 @@ $(document).ready(function() {
 			$('#groupList').html(htmlString);
 		}
 	});
-	
+
 	/*
-		$.ajax({
+		$.ajax({														//receive message
 			type : 'get',
 			url : 'groupHome/rvdMessage',
 			success : function(data) {
@@ -32,7 +32,7 @@ $(document).ready(function() {
 			}
 		});
 		
-		$.ajax({
+		$.ajax({													//get profile
 			type : 'get',
 			url : 'groupHome/getProfile',
 			success : function(data) {
@@ -107,7 +107,7 @@ $(document).ready(function() {
 	});
 	
 	/*
-	$('#btnSaveprofile').click(function() {
+	$('#btnSaveprofile').click(function() {									// save profile
 			var name = $('#nameinputProfile').val();
 			var job = $('#jobinputProfile').val();
 			var age = $('#age').val();
@@ -131,40 +131,18 @@ $(document).ready(function() {
 				}
 			});
 		});
+
 		
-		$('#btnSendmessageok').click(function() {
+		$('#btnSendmessageok').click(function() {								// send message
 			var title = $('#dataMsgtitle').val();
-			//var sendingPerson = $('data.ID').val(); 			占쎈��껃칰占쏙옙�롫뮉野껓옙筌띿쉶�쀥쳞�곻옙 筌뤴뫀�ㅵ칰醫롫뮶
+			//var sendingPerson = $('data.ID').val(); 			
 			var receivingPerson = $('#dataMsgsender').val();
 			var content = $('#dataMsgcontent').val();
 			//var date = $.datepicker.formatDate('yy/mm/dd', new Date()); 	 //today's date
 			
 			var json = {};
 			json["message_title"] = title;
-			//json["sender_id"] = sendingPerson;			占쎄쑴肉됬댆占쏙쭕�롮몵筌롳옙揶쏆늿��占썩뫁竊쒏묾占�
-			json["receiver_id"] = receivingPerson;
-			json["message_content"] = content;
-			//json["date"] = date; 				 //today's date
-	
-			$.ajax({
-				type : 'post',
-				url : '/groupHome/sendMessage',
-				data : json,
-				success : function(result) {
-					alert('Saveing sending message data success!');
-					$('#sendDate').html(date);
-					$('#rvdTitle').html(title);
-					$('#rvdReceiver').html(receivingPerson);
-				}
-			});
-		});
-		
-		$('#btnImageUpload').click(function() {
-			var image = $('#imageProfile').val();
-			
-			var json = {};
-			json["message_title"] = title;
-			//json["sender_id"] = sendingPerson;			占쎄쑴肉됬댆占쏙쭕�롮몵筌롳옙揶쏆늿��占썩뫁竊쒏묾占�
+			//json["sender_id"] = sendingPerson;			
 			json["receiver_id"] = receivingPerson;
 			json["message_content"] = content;
 			//json["date"] = date; 				 //today's date

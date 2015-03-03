@@ -82,6 +82,7 @@ $(document).ready(function() {
 		});
 	});
 	
+
 	$("#btnWriteBoard").click(function() {
 		var now = new Date();
 		var year = now.getFullYear();
@@ -94,24 +95,25 @@ $(document).ready(function() {
 		
 		var json = {};
 		json["today"] = today;
-		json["title"] = title;
-		json["content"] = content;
+		json["boardTitle"] = title;
+		json["boardContent"] = content;
 		
 		$.ajax({
 			type : 'post',
 			url : '/groupBoard_writing/writeBoard',
 			data: json,
 			success : function(data) {
+
 				$(location).attr('href', '/groupBoard');
 			}
 		});
 	});
 	
+
 	$("#btnLoadList").click(function() {
 		$.ajax({
-			type : 'post',
+			type : 'get',
 			url : '/groupBoard_writing/loadList',
-			data: json,
 			success : function(data) {
 				$(location).attr('href', '/groupBoard');
 			}

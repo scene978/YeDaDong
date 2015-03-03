@@ -60,7 +60,6 @@ app.get('/groupHome', groupHome.index);
 /*
 app.get('groupHome/rvdMessage', groupHome.rvdMessage);
 app.get('groupHome/getProfile', groupHome.getProfile);
-app.post('/groupHome/imageUpload', groupHome.imageUpload);
 app.post('/groupHome/sendMessage', groupHome.sendMessage);
 */
 
@@ -73,7 +72,7 @@ app.get('/groupBoard', groupBoard.index);
 //groupBoard_writing
 app.get('/groupBoard_writing', groupBoard_writing.index);
 //app.post('/groupBoard_writing/writeBoard', groupBoard_writing.writeBoard);
-//app.post('/groupBoard_writing/loadList', groupBoard_writing.loadList);
+app.get('/groupBoard_writing/loadList', groupBoard_writing.loadList);
 
 
 //groupFamily

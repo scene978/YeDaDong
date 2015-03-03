@@ -177,7 +177,6 @@ var joinGroup = function(groupID) {
 				window.location.reload(true);
 			}
 		});
-
 }
 
 var moveGroup = function(groupID){
