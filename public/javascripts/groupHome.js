@@ -20,7 +20,32 @@ $(document).ready(function() {
 			$('#groupList').html(htmlString);
 		}
 	});
-
+	
+	/*
+		$.ajax({
+			type : 'get',
+			url : 'groupHome/rvdMessage',
+			success : function(data) {
+				$('#rvdDate').html(data.date);
+				$('#rvdTitle').html(data.message_title);
+				$('#rvdSender').html(data.sender_id);
+			}
+		});
+		
+		$.ajax({
+			type : 'get',
+			url : 'groupHome/getProfile',
+			success : function(data) {
+				$('#nameinputProfile').html(data.member_name);
+				$('#jobinputProfile').html(data.job);
+				$('#age').html(data.age);
+				$('#place').html(data.place);
+				$('#email').html(data.email);
+				$('#contact').html(data.contact);
+			}
+		});
+	*/
+	
 	$("#btnLogout").click(function() {
 		$.ajax({
 			type : 'get',
@@ -80,6 +105,86 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	/*
+	$('#btnSaveprofile').click(function() {
+			var name = $('#nameinputProfile').val();
+			var job = $('#jobinputProfile').val();
+			var age = $('#age').val();
+			var place = $('#place').val();
+			var email = $('#email').val();
+			var contact = $('#contact').val();
+			
+			var json = {};
+			json["member_name"] = name;
+			json["age"] = age;
+			json["location"] = place;
+			json["id"] = email;
+			json["contact"] = contact;
+	
+			$.ajax({
+				type : 'post',
+				url : '/groupHome/imageUpload',
+				data : json,
+				success : function(result) {
+					alert('Saving profile data success!');
+				}
+			});
+		});
+		
+		$('#btnSendmessageok').click(function() {
+			var title = $('#dataMsgtitle').val();
+			//var sendingPerson = $('data.ID').val(); 			占쎈��껃칰占쏙옙�롫뮉野껓옙筌띿쉶�쀥쳞�곻옙 筌뤴뫀�ㅵ칰醫롫뮶
+			var receivingPerson = $('#dataMsgsender').val();
+			var content = $('#dataMsgcontent').val();
+			//var date = $.datepicker.formatDate('yy/mm/dd', new Date()); 	 //today's date
+			
+			var json = {};
+			json["message_title"] = title;
+			//json["sender_id"] = sendingPerson;			占쎄쑴肉됬댆占쏙쭕�롮몵筌롳옙揶쏆늿��占썩뫁竊쒏묾占�
+			json["receiver_id"] = receivingPerson;
+			json["message_content"] = content;
+			//json["date"] = date; 				 //today's date
+	
+			$.ajax({
+				type : 'post',
+				url : '/groupHome/sendMessage',
+				data : json,
+				success : function(result) {
+					alert('Saveing sending message data success!');
+					$('#sendDate').html(date);
+					$('#rvdTitle').html(title);
+					$('#rvdReceiver').html(receivingPerson);
+				}
+			});
+		});
+		
+		$('#btnImageUpload').click(function() {
+			var image = $('#imageProfile').val();
+			
+			var json = {};
+			json["message_title"] = title;
+			//json["sender_id"] = sendingPerson;			占쎄쑴肉됬댆占쏙쭕�롮몵筌롳옙揶쏆늿��占썩뫁竊쒏묾占�
+			json["receiver_id"] = receivingPerson;
+			json["message_content"] = content;
+			//json["date"] = date; 				 //today's date
+	
+			$.ajax({
+				type : 'post',
+				url : '/groupHome/sendMessage',
+				data : json,
+				success : function(result) {
+					alert('Saveing sending message data success!');
+					$('#sendDate').html(date);
+					$('#rvdTitle').html(title);
+					$('#rvdReceiver').html(receivingPerson);
+				}
+			});
+		});
+		
+	*/
+	
+	
 	/*-----------------------------------------------------Send message popup script----------------------------------------------------------------*/
 
 $(".btnSendmessage").click(function() {
@@ -94,6 +199,11 @@ $(".sendpersonMessagebox").click(function() {
 		
 $(".textMessagebox").click(function() {
 		layer_open('popupRvdmessage', 'layer2');
+		return false;
+	});
+	
+$("#btnImageUpload").click(function() {
+		layer_open('popupImageUpload', 'layer3');
 		return false;
 	});
 	

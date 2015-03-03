@@ -81,4 +81,40 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	$("#btnWriteBoard").click(function() {
+		var now = new Date();
+		var year = now.getFullYear();
+		var month = (now.getMonth()+1)>9 ? ''+(now.getMonth()+1) : '0' + (now.getMonth()+1);
+		var day = now.getDate()>9 ? ''+now.getDate() : '0' + now.getDate();
+		
+		var today = year + '-' + month + '-' +day;
+		var title = $('#titlePosting').val();
+		var content = $('#contentPosting').val();
+		
+		var json = {};
+		json["today"] = today;
+		json["title"] = title;
+		json["content"] = content;
+		
+		$.ajax({
+			type : 'post',
+			url : '/groupBoard_writing/writeBoard',
+			data: json,
+			success : function(data) {
+				$(location).attr('href', '/groupBoard');
+			}
+		});
+	});
+	
+	$("#btnLoadList").click(function() {
+		$.ajax({
+			type : 'post',
+			url : '/groupBoard_writing/loadList',
+			data: json,
+			success : function(data) {
+				$(location).attr('href', '/groupBoard');
+			}
+		});
+	});
 });
