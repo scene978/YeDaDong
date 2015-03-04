@@ -88,8 +88,18 @@ $(".btnAccept").click(function() {
 		return false;
 	});
 	
+$("#btnAcceptConfirm").click(function() {
+		layer_open('popupAcceptConfirm', 'layer1_1');
+		return false;
+	});
+	
 $(".btnRefuse").click(function() {
 		layer_open('popupRefuse', 'layer2');
+		return false;
+	});
+	
+$("#btnRefuseConfirm").click(function() {
+		layer_open('popupRefuseConfirm', 'layer2_1');
 		return false;
 	});
 	
@@ -98,8 +108,18 @@ $(".btnAuthorize").click(function() {
 		return false;
 	});
 	
+$("#btnAuthorizeConfirm").click(function() {
+		layer_open('popupAuthorizeConfirm', 'layer3_1');
+		return false;
+	});
+	
 $(".btnSignout").click(function() {
 		layer_open('popupSignout', 'layer4');
+		return false;
+	});
+	
+$("#btnSignoutConfirm").click(function() {
+		layer_open('popupSignoutConfirm', 'layer4_1');
 		return false;
 	});
 	

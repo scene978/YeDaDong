@@ -57,12 +57,12 @@ app.post('/mypage/searchGroup', mypage.searchGroup);
 //groupHome
 app.get('/groupHome', groupHome.index);
 /*
-app.get('groupHome/rvdMessage', groupHome.rvdMessage);
 app.get('groupHome/getProfile', groupHome.getProfile);
+app.post('groupHome/rvdMessage', groupHome.rvdMessage);
+app.post('groupHome/sendMessage', groupHome.sendMessage);
 app.post('/groupHome/imageUpload', groupHome.imageUpload);
 app.post('/groupHome/sendMessage', groupHome.sendMessage);
 */
-
 
 
 //groupBoard

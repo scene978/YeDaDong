@@ -28,9 +28,9 @@
 #SettingGroupSection .btnAuthorize{width:70px;height:30px;font-size:12px;font-family: 'Hanna', serif;float:right;margin-top:3px}
 
 /*--------------------------------------------------------Waiting Member Accept popup style------------------------------------------------*/
-.layer {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
-.layer .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
-.layer .poplayerAccept {display: block;}
+.layer, .layer1_1 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
+.layer .background, .layer1_1 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
+.layer .poplayerAccept, .layer1_1 .poplayerAccept {display: block;}
 .poplayerAccept{display: none;position: absolute;top: 50%;left: 50%;width: 300px;height: 120px;background-color: #fff;border: 5px solid #454545;z-index: 10;border-radius: 20px;}
 .poplayerAccept .pop_containerAccept {padding: 20px 25px;}
 .poplayerAccept .btnOkclose {width: 100%;margin: 10px 0 20px;padding-top: 10px;border-top: 1px solid #DDD;text-align: right;}
@@ -38,9 +38,9 @@ a.btnClose, a.btnOk {margin-right: 30px;display: inline-block;height: 25px;paddi
 a.btnClose:hover, a.btnOk:hover {border: 1px solid #454545;background-color: #454545;color: black;}
 
 /*--------------------------------------------------------Waiting Member Refuse popup style------------------------------------------------*/
-.layer2 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
-.layer2 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
-.layer2 .poplayerRefuse {display: block;}
+.layer2, .layer2_1 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
+.layer2 .background, .layer2_1 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
+.layer2 .poplayerRefuse, .layer2_1 .poplayerRefuse {display: block;}
 .poplayerRefuse{display: none;position: absolute;top: 50%;left: 50%;width: 300px;height: 120px;background-color: #fff;border: 5px solid #454545;z-index: 10;border-radius: 20px;}
 .poplayerRefuse .pop_containerRefuse {padding: 20px 25px;}
 .poplayerRefuse .btnOkclose {width: 100%;margin: 10px 0 20px;padding-top: 10px;border-top: 1px solid #DDD;text-align: right;}
@@ -48,9 +48,9 @@ a.btnClose, a.btnOk {margin-right: 30px;display: inline-block;height: 25px;paddi
 a.btnClose:hover, a.btnOk:hover {border: 1px solid #454545;background-color: #454545;color: black;}
 
 /*--------------------------------------------------------Group Member Authorize popup style------------------------------------------------*/
-.layer3 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
-.layer3 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
-.layer3 .poplayerAuthorize {display: block;}
+.layer3, .layer3_1 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
+.layer3 .background, .layer3_1 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
+.layer3 .poplayerAuthorize, .layer3_1 .poplayerAuthorize {display: block;}
 .poplayerAuthorize{display: none;position: absolute;top: 50%;left: 50%;width: 300px;height: 120px;background-color: #fff;border: 5px solid #454545;z-index: 10;border-radius: 20px;}
 .poplayerAuthorize .pop_containerAuthorize {padding: 20px 25px;}
 .poplayerAuthorize .btnOkclose {width: 100%;margin: 10px 0 20px;padding-top: 10px;border-top: 1px solid #DDD;text-align: right;}
@@ -58,9 +58,9 @@ a.btnClose, a.btnOk {margin-right: 30px;display: inline-block;height: 25px;paddi
 a.btnClose:hover, a.btnOk:hover {border: 1px solid #454545;background-color: #454545;color: black;}
 
 /*--------------------------------------------------------Group Member Signout popup style------------------------------------------------*/
-.layer4 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
-.layer4 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
-.layer4 .poplayerSignout {display: block;}
+.layer4, .layer4_1 {display: none;position: fixed;_position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;font-family: Verdana;font-size : 14px}
+.layer4 .background, .layer4_1 .background {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity = 50);}
+.layer4 .poplayerSignout, .layer4_1 .poplayerSignout {display: block;}
 .poplayerSignout{display: none;position: absolute;top: 50%;left: 50%;width: 300px;height: 120px;background-color: #fff;border: 5px solid #454545;z-index: 10;border-radius: 20px;}
 .poplayerSignout .pop_containerSignout {padding: 20px 25px;}
 .poplayerSignout .btnOkclose {width: 100%;margin: 10px 0 20px;padding-top: 10px;border-top: 1px solid #DDD;text-align: right;}
