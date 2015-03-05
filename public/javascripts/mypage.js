@@ -61,9 +61,9 @@
 		}
 	});
 
+
 	$("#sb").click(function() {
 		var groupNameSearch = $('#sf').val();
-
 		if( groupNameSearch == ""){
 			alert("Invalid group name");
 		} else {
@@ -75,9 +75,6 @@
 				url : '/mypage/searchGroup',
 				data : json,
 				success : function(data) {
-					console.log("a");
-					console.log(data[0]);
-					console.log(data[1]);
 
 					$("#templates_2").load('template/searchGroup.html',function(){
 					 	var template = $("#groupSearch").html();
@@ -91,6 +88,7 @@
 			});
 		}
 	});
+
 
 	$("#create_group_btn").click(function() {
 		layer_open('create_group_popup', 'layer');
@@ -165,6 +163,22 @@ var changeState = function(groupID){
 		});
 	}
 
+var joinGroup = function(groupID) {
+
+	var json = {};
+	json["groupID"] = groupID;
+
+	$.ajax({
+		type : 'post',
+		url : '/mypage/joinGroup',
+		data : json,
+		success : function(result) {
+				console.log("join complete");
+				window.location.reload(true);
+			}
+		});
+}
+
 var moveGroup = function(groupID){
 
 		var json = {};
@@ -178,7 +192,7 @@ var moveGroup = function(groupID){
 				$(location).attr('href', '/groupHome');
 			}
 		});
-	}	
+}	
 
 function layer_open(layer_id, higher_layer_class) {
 

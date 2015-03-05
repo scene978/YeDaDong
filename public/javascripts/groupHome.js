@@ -128,7 +128,7 @@ $(document).ready(function() {
 	});
 	
 	/*
-	$('#btnSaveprofile').click(function() {
+	$('#btnSaveprofile').click(function() {									// save profile
 			var name = $('#nameinputProfile').val();
 			var job = $('#jobinputProfile').val();
 			var age = $('#age').val();
@@ -152,8 +152,9 @@ $(document).ready(function() {
 				}
 			});
 		});
+
 		
-		$('#btnSendmessageok').click(function() {
+		$('#btnSendmessageok').click(function() {								// send message
 			var title = $('#dataMsgtitle').val();
 			//var sendingPerson = $('data.ID').val(); 			
 			var receivingPerson = $('#dataMsgsender').val();

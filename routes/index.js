@@ -41,6 +41,7 @@ exports.signin = function(req,res){
            }
            else {
                 client.query('INSERT INTO member(id, pwd, member_name) VALUES (?,?,?)',[id, pwd, name],function(error, rows, fields){
+                    DBpool.release(client);
                     res.send({ "status": "SUCCESS" });
                 });
             }
