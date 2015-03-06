@@ -23,8 +23,8 @@ $(document).ready(function() {
 	
 	
 		$.ajax({
-			type : 'post',
-			url : 'groupHome/rvdMessage',
+			type : 'get',
+			url : '/groupHome/rvdMessage',
 			success : function(data) {
 			$("#templates_1").load('template/RvdMessageList.html',function(){
 				var template = $("#templateRvdMessage").html();
@@ -38,12 +38,13 @@ $(document).ready(function() {
 		});
 		
 		$.ajax({
-			type : 'post',
-			url : 'groupHome/sendMessage',
+			type : 'get',
+			url : '/groupHome/sendMessage',
 			success : function(data) {
 			$("#templates_1").load('template/SendMessageList.html',function(){
 				var template = $("#templateSendMessage").html();
 				var html="";
+
 				 $.each(data, function(index,value){
 					html += Mustache.render(template, data[index]);
 			 	});
@@ -51,21 +52,21 @@ $(document).ready(function() {
 				});
 			}
 		});
-		
-		/*
+
+
 		$.ajax({
 			type : 'get',
-			url : 'groupHome/getProfile',
+			url : '/groupHome/getProfile',
 			success : function(data) {
-				$('#nameinputProfile').html(data.member_name);
-				$('#jobinputProfile').html(data.job);
-				$('#age').html(data.age);
-				$('#place').html(data.place);
-				$('#email').html(data.email);
-				$('#contact').html(data.contact);
+				$('#nameinputProfile').val(data[0].member_name);
+				$('#jobinputProfile').val(data[0].job);
+				$('#age').val(data[0].age);
+				$('#place').val(data[0].location);
+				$('#email').val(data[0].email);
+				$('#contact').val(data[0].contact);
 			}
 		});
-	*/
+
 	
 	$("#btnLogout").click(function() {
 		$.ajax({
@@ -127,7 +128,7 @@ $(document).ready(function() {
 		});
 	});
 	
-	/*
+	
 	$('#btnSaveprofile').click(function() {									// save profile
 			var name = $('#nameinputProfile').val();
 			var job = $('#jobinputProfile').val();
@@ -135,17 +136,30 @@ $(document).ready(function() {
 			var place = $('#place').val();
 			var email = $('#email').val();
 			var contact = $('#contact').val();
-			
+
 			var json = {};
-			json["member_name"] = name;
-			json["age"] = age;
-			json["location"] = place;
-			json["id"] = email;
-			json["contact"] = contact;
-	
+			if(name != "") {
+				json["member_name"] = name;
+			}
+			if(job != "") {
+				json["job"] = job;
+			}
+			if(age != "") {
+				json["age"] = age;
+			}
+			if(place != "") {
+				json["place"] = place;
+			}
+			if(email != "") {
+				json["email"] = email;
+			}
+			if(contact != "") {
+				json["contact"] = contact;
+			}
+			
 			$.ajax({
 				type : 'post',
-				url : '/groupHome/imageUpload',
+				url : '/groupHome/saveProfile',
 				data : json,
 				success : function(result) {
 					alert('Saving profile data success!');
@@ -153,7 +167,7 @@ $(document).ready(function() {
 			});
 		});
 
-		
+	/*	
 		$('#btnSendmessageok').click(function() {								// send message
 			var title = $('#dataMsgtitle').val();
 			//var sendingPerson = $('data.ID').val(); 			
